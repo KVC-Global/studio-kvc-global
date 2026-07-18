@@ -34,6 +34,19 @@ export const service = defineType({
       description: 'e.g., GraduationCap, Globe, ShieldCheck',
     }),
     defineField({
+      name: 'image',
+      title: 'Service Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'alt',
+      title: 'Alternative Text (for accessibility)',
+      type: 'string',
+    }),
+    defineField({
       name: 'details',
       title: 'Details',
       type: 'array',
