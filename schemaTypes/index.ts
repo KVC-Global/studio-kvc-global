@@ -1,6 +1,15 @@
-import { testimonial } from './documents/testimonial'
+import { faq } from './documents/faq'
+import { homePage } from './documents/homePage'
 import { partner } from './documents/partner'
 import { service } from './documents/service'
-import { faq } from './documents/faq'
+import { testimonial } from './documents/testimonial'
+import { homepageObjects } from './objects/homeSections'
 
-export const schemaTypes = [testimonial, partner, service, faq]
+export const schemaTypes = [
+  homePage,
+  ...homepageObjects,
+  testimonial,
+  partner,
+  service,
+  faq,
+]
