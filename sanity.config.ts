@@ -20,14 +20,14 @@ export default defineConfig({
         {id: 'vi', title: 'Vietnamese'},
         {id: 'en', title: 'English'},
       ],
-      schemaTypes: ['homePage', 'service', 'partner', 'testimonial', 'faq'],
+      schemaTypes: ['homePage', 'workPassPage', 'service', 'partner', 'testimonial', 'faq'],
     }),
   ],
 
   schema: {
     types: schemaTypes,
     templates: (templates) => [
-      ...templates.filter((template) => template.schemaType !== 'homePage'),
+      ...templates.filter((template) => template.schemaType !== 'homePage' && template.schemaType !== 'workPassPage'),
       {
         id: 'home-page-vi',
         title: 'Trang chủ — Tiếng Việt',
@@ -38,6 +38,18 @@ export default defineConfig({
         id: 'home-page-en',
         title: 'Homepage — English',
         schemaType: 'homePage',
+        value: {language: 'en'},
+      },
+      {
+        id: 'work-pass-page-vi',
+        title: 'Trang Work Pass — Tiếng Việt',
+        schemaType: 'workPassPage',
+        value: {language: 'vi'},
+      },
+      {
+        id: 'work-pass-page-en',
+        title: 'Work Pass Page — English',
+        schemaType: 'workPassPage',
         value: {language: 'en'},
       },
     ],
