@@ -1,4 +1,4 @@
-import { defineType, defineField } from 'sanity'
+import {defineType, defineField} from 'sanity'
 
 export const service = defineType({
   name: 'service',
@@ -6,8 +6,8 @@ export const service = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: "language",
-      type: "string",
+      name: 'language',
+      type: 'string',
       readOnly: true,
       hidden: true,
     }),
@@ -56,7 +56,35 @@ export const service = defineType({
       name: 'details',
       title: 'Details',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [{type: 'block'}],
     }),
   ],
+  preview: {
+    select: {
+      title: 'title',
+      description: 'description',
+      language: 'language',
+      media: 'image',
+    },
+    prepare({
+      title,
+      description,
+      language,
+      media,
+    }: {
+      title?: string
+      description?: string
+      language?: string
+      media?: any
+    }) {
+      const truncated = description
+        ? description.slice(0, 100) + (description.length > 100 ? '…' : '')
+        : ''
+      return {
+        title,
+        subtitle: [language?.toUpperCase(), truncated].filter(Boolean).join(' — '),
+        media,
+      }
+    },
+  },
 })
