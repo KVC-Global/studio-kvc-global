@@ -312,7 +312,7 @@ export const publicStudyServices = defineType({
       name: 'services',
       title: 'Related services list',
       type: 'array',
-      of: [defineArrayMember({ type: 'publicStudyServiceItem' })]
+      of: [defineArrayMember({ type: 'reference', to: [{ type: 'relatedService' }] })]
     })
   ]
 })

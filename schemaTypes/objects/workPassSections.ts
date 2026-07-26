@@ -251,7 +251,7 @@ export const workPassServices = defineType({
       name: 'services',
       title: 'Services list',
       type: 'array',
-      of: [defineArrayMember({ type: 'workPassServiceItem' })]
+      of: [defineArrayMember({ type: 'reference', to: [{ type: 'relatedService' }] })]
     })
   ]
 })

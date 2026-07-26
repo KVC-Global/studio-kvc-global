@@ -7,7 +7,7 @@ import {privateStudyStructure} from './structures/privateStudyStructure'
 import {publicStudyStructure} from './structures/publicStudyStructure'
 import {aboutStructure, contactStructure} from './structures/pageStructure'
 
-const sharedDocumentTypes = new Set(['service', 'partner', 'testimonial', 'faq'])
+const sharedDocumentTypes = new Set(['service', 'relatedService', 'partner', 'testimonial', 'faq'])
 const allStructuredDocumentTypes = new Set([
   'homePage',
   'aboutPage',
@@ -52,6 +52,7 @@ export const structure: StructureResolver = (S) =>
             .items([
               S.documentTypeListItem('partner').title('Partners'),
               S.documentTypeListItem('service').title('Services'),
+              S.documentTypeListItem('relatedService').title('Related Services (Study)'),
               S.documentTypeListItem('testimonial').title('Testimonials'),
               S.documentTypeListItem('faq').title('FAQs'),
             ]),

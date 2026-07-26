@@ -4,6 +4,7 @@ import {faq} from './documents/faq'
 import {homePage} from './documents/homePage'
 import {partner} from './documents/partner'
 import {service} from './documents/service'
+import {relatedService} from './documents/relatedService'
 import {testimonial} from './documents/testimonial'
 import {homepageObjects} from './objects/homeSections'
 import { workPassPage } from './documents/workPassPage'
@@ -37,5 +38,6 @@ export const schemaTypes = [
   testimonial,
   partner,
   service,
+  relatedService,
   faq,
 ]

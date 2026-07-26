@@ -157,7 +157,7 @@ export const uniMasterServices = defineType({
       name: 'services',
       title: 'Related services list',
       type: 'array',
-      of: [defineArrayMember({ type: 'uniMasterServiceItem' })]
+      of: [defineArrayMember({ type: 'reference', to: [{ type: 'relatedService' }] })]
     })
   ]
 })

@@ -25,6 +25,7 @@ export default defineConfig({
         'aboutPage',
         'contactPage',
         'service',
+        'relatedService',
         'partner',
         'testimonial',
         'faq',
