@@ -1,5 +1,5 @@
 import React from 'react'
-import { StructureBuilder } from 'sanity/structure'
+import type { StructureBuilder } from 'sanity/structure'
 
 const GraduationCapIcon = () =>
   React.createElement(
@@ -21,29 +21,33 @@ const GraduationCapIcon = () =>
     React.createElement('path', { d: 'M6 12v5c0 2 2 3 6 3s6-1 6-3v-5' })
   )
 
+const uniMasterDocument = (
+  S: StructureBuilder,
+  language: 'vi' | 'en',
+  title: string,
+) =>
+  S.listItem()
+    .id(`uni-master-page-${language}`)
+    .title(title)
+    .child(
+      S.document()
+        .id(`uni-master-page-${language}`)
+        .title(title)
+        .schemaType('uniMasterPage')
+        .documentId(`uni-master-page-${language}`)
+        .initialValueTemplate(`uni-master-page-${language}`),
+    )
+
 export const uniMasterStructure = (S: StructureBuilder) =>
   S.listItem()
+    .id('uni-master-page-parent')
     .title('Trang Đại học & Thạc sĩ (Bachelor & Master Page)')
     .icon(GraduationCapIcon)
     .child(
       S.list()
-        .title('Chọn ngôn ngữ')
+        .title('Trang Đại học & Thạc sĩ (Bachelor & Master Page)')
         .items([
-          S.listItem()
-            .title('Tiếng Việt')
-            .child(
-              S.document()
-                .title('Trang Đại học & Thạc sĩ — Tiếng Việt')
-                .schemaType('uniMasterPage')
-                .documentId('uni-master-page-vi')
-            ),
-          S.listItem()
-            .title('English')
-            .child(
-              S.document()
-                .title('Uni & Master Page — English')
-                .schemaType('uniMasterPage')
-                .documentId('uni-master-page-en')
-            ),
-        ])
+          uniMasterDocument(S, 'vi', 'Trang Đại học & Thạc sĩ — Tiếng Việt'),
+          uniMasterDocument(S, 'en', 'Uni & Master Page — English'),
+        ]),
     )

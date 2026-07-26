@@ -30,7 +30,18 @@ export const structure: StructureResolver = (S) =>
         .child(
           S.list()
             .title('Pages')
-            .items([homeStructure(S), aboutStructure(S), contactStructure(S)]),
+            .items([
+              homeStructure(S),
+              aboutStructure(S),
+              contactStructure(S),
+              S.divider(),
+              workPassStructure(S),
+              S.divider(),
+              studyAbroadStructure(S),
+              uniMasterStructure(S),
+              privateStudyStructure(S),
+              publicStudyStructure(S),
+            ]),
         ),
       S.listItem()
         .id('shared-content')

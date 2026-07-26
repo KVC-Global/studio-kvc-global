@@ -1,5 +1,5 @@
 import React from 'react'
-import { StructureBuilder } from 'sanity/structure'
+import type { StructureBuilder } from 'sanity/structure'
 
 const LandmarkIcon = () =>
   React.createElement(
@@ -23,29 +23,33 @@ const LandmarkIcon = () =>
     React.createElement('polygon', { points: '12 2 2 7 22 7 12 2' })
   )
 
+const publicStudyDocument = (
+  S: StructureBuilder,
+  language: 'vi' | 'en',
+  title: string,
+) =>
+  S.listItem()
+    .id(`public-study-page-${language}`)
+    .title(title)
+    .child(
+      S.document()
+        .id(`public-study-page-${language}`)
+        .title(title)
+        .schemaType('publicStudyPage')
+        .documentId(`public-study-page-${language}`)
+        .initialValueTemplate(`public-study-page-${language}`),
+    )
+
 export const publicStudyStructure = (S: StructureBuilder) =>
   S.listItem()
+    .id('public-study-page-parent')
     .title('Trang Du học Công lập (Public Study Page)')
     .icon(LandmarkIcon)
     .child(
       S.list()
-        .title('Chọn ngôn ngữ')
+        .title('Trang Du học Công lập (Public Study Page)')
         .items([
-          S.listItem()
-            .title('Tiếng Việt')
-            .child(
-              S.document()
-                .title('Trang Du học Công lập — Tiếng Việt')
-                .schemaType('publicStudyPage')
-                .documentId('public-study-page-vi')
-            ),
-          S.listItem()
-            .title('English')
-            .child(
-              S.document()
-                .title('Public Study Page — English')
-                .schemaType('publicStudyPage')
-                .documentId('public-study-page-en')
-            ),
-        ])
+          publicStudyDocument(S, 'vi', 'Trang Du học Công lập — Tiếng Việt'),
+          publicStudyDocument(S, 'en', 'Public Study Page — English'),
+        ]),
     )

@@ -1,5 +1,5 @@
 import React from 'react'
-import { StructureBuilder } from 'sanity/structure'
+import type { StructureBuilder } from 'sanity/structure'
 
 const BuildingIcon = () =>
   React.createElement(
@@ -25,29 +25,33 @@ const BuildingIcon = () =>
     React.createElement('path', { d: 'M16 10h.01' })
   )
 
+const privateStudyDocument = (
+  S: StructureBuilder,
+  language: 'vi' | 'en',
+  title: string,
+) =>
+  S.listItem()
+    .id(`private-study-page-${language}`)
+    .title(title)
+    .child(
+      S.document()
+        .id(`private-study-page-${language}`)
+        .title(title)
+        .schemaType('privateStudyPage')
+        .documentId(`private-study-page-${language}`)
+        .initialValueTemplate(`private-study-page-${language}`),
+    )
+
 export const privateStudyStructure = (S: StructureBuilder) =>
   S.listItem()
+    .id('private-study-page-parent')
     .title('Trang Du học Tư thục (Private Study Page)')
     .icon(BuildingIcon)
     .child(
       S.list()
-        .title('Chọn ngôn ngữ')
+        .title('Trang Du học Tư thục (Private Study Page)')
         .items([
-          S.listItem()
-            .title('Tiếng Việt')
-            .child(
-              S.document()
-                .title('Trang Du học Tư thục — Tiếng Việt')
-                .schemaType('privateStudyPage')
-                .documentId('private-study-page-vi')
-            ),
-          S.listItem()
-            .title('English')
-            .child(
-              S.document()
-                .title('Private Study Page — English')
-                .schemaType('privateStudyPage')
-                .documentId('private-study-page-en')
-            ),
-        ])
+          privateStudyDocument(S, 'vi', 'Trang Du học Tư thục — Tiếng Việt'),
+          privateStudyDocument(S, 'en', 'Private Study Page — English'),
+        ]),
     )
