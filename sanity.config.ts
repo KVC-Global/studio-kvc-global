@@ -20,14 +20,14 @@ export default defineConfig({
         {id: 'vi', title: 'Vietnamese'},
         {id: 'en', title: 'English'},
       ],
-      schemaTypes: ['homePage', 'workPassPage', 'service', 'partner', 'testimonial', 'faq'],
+      schemaTypes: ['homePage', 'workPassPage', 'studyAbroadPage', 'service', 'partner', 'testimonial', 'faq'],
     }),
   ],
 
   schema: {
     types: schemaTypes,
     templates: (templates) => [
-      ...templates.filter((template) => template.schemaType !== 'homePage' && template.schemaType !== 'workPassPage'),
+      ...templates.filter((template) => template.schemaType !== 'homePage' && template.schemaType !== 'workPassPage' && template.schemaType !== 'studyAbroadPage'),
       {
         id: 'home-page-vi',
         title: 'Trang chủ — Tiếng Việt',
@@ -50,6 +50,18 @@ export default defineConfig({
         id: 'work-pass-page-en',
         title: 'Work Pass Page — English',
         schemaType: 'workPassPage',
+        value: {language: 'en'},
+      },
+      {
+        id: 'study-abroad-page-vi',
+        title: 'Trang Du học — Tiếng Việt',
+        schemaType: 'studyAbroadPage',
+        value: {language: 'vi'},
+      },
+      {
+        id: 'study-abroad-page-en',
+        title: 'Study Abroad Page — English',
+        schemaType: 'studyAbroadPage',
         value: {language: 'en'},
       },
     ],
