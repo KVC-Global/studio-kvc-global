@@ -20,26 +20,42 @@ export default defineConfig({
         {id: 'vi', title: 'Vietnamese'},
         {id: 'en', title: 'English'},
       ],
-      schemaTypes: ['homePage', 'service', 'partner', 'testimonial', 'faq'],
+      schemaTypes: [
+        'homePage',
+        'aboutPage',
+        'contactPage',
+        'service',
+        'partner',
+        'testimonial',
+        'faq',
+      ],
     }),
   ],
 
   schema: {
     types: schemaTypes,
     templates: (templates) => [
-      ...templates.filter((template) => template.schemaType !== 'homePage'),
-      {
-        id: 'home-page-vi',
-        title: 'Trang chủ — Tiếng Việt',
-        schemaType: 'homePage',
-        value: {language: 'vi'},
-      },
-      {
-        id: 'home-page-en',
-        title: 'Homepage — English',
-        schemaType: 'homePage',
-        value: {language: 'en'},
-      },
+      ...templates.filter(
+        (template) => !['homePage', 'aboutPage', 'contactPage'].includes(template.schemaType),
+      ),
+      ...[
+        ['home-page', 'homePage', 'Trang chủ', 'Homepage'],
+        ['about-page', 'aboutPage', 'Giới thiệu', 'About'],
+        ['contact-page', 'contactPage', 'Liên hệ', 'Contact'],
+      ].flatMap(([id, schemaType, viTitle, enTitle]) => [
+        {
+          id: `${id}-vi`,
+          title: `${viTitle} — Tiếng Việt`,
+          schemaType,
+          value: {language: 'vi'},
+        },
+        {
+          id: `${id}-en`,
+          title: `${enTitle} — English`,
+          schemaType,
+          value: {language: 'en'},
+        },
+      ]),
     ],
   },
 })

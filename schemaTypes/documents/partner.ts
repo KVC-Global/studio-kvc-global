@@ -1,4 +1,4 @@
-import { defineType, defineField } from 'sanity'
+import {defineType, defineField} from 'sanity'
 
 export const partner = defineType({
   name: 'partner',
@@ -6,8 +6,8 @@ export const partner = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: "language",
-      type: "string",
+      name: 'language',
+      type: 'string',
       readOnly: true,
       hidden: true,
     }),
@@ -32,4 +32,18 @@ export const partner = defineType({
       type: 'url',
     }),
   ],
+  preview: {
+    select: {
+      title: 'name',
+      subtitle: 'language',
+      media: 'logo',
+    },
+    prepare({title, subtitle, media}: {title?: string; subtitle?: string; media?: any}) {
+      return {
+        title,
+        subtitle: subtitle?.toUpperCase(),
+        media,
+      }
+    },
+  },
 })
