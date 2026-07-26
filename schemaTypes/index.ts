@@ -8,6 +8,8 @@ import { workPassPage } from './documents/workPassPage'
 import { workPassObjects } from './objects/workPassSections'
 import { studyAbroadPage } from './documents/studyAbroadPage'
 import { studyAbroadObjects } from './objects/studyAbroadSections'
+import { uniMasterPage } from './documents/uniMasterPage'
+import { uniMasterObjects } from './objects/uniMasterSections'
 
 export const schemaTypes = [
   homePage,
@@ -16,6 +18,8 @@ export const schemaTypes = [
   ...workPassObjects,
   studyAbroadPage,
   ...studyAbroadObjects,
+  uniMasterPage,
+  ...uniMasterObjects,
   testimonial,
   partner,
   service,

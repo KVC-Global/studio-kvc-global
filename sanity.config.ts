@@ -20,14 +20,14 @@ export default defineConfig({
         {id: 'vi', title: 'Vietnamese'},
         {id: 'en', title: 'English'},
       ],
-      schemaTypes: ['homePage', 'workPassPage', 'studyAbroadPage', 'service', 'partner', 'testimonial', 'faq'],
+      schemaTypes: ['homePage', 'workPassPage', 'studyAbroadPage', 'uniMasterPage', 'service', 'partner', 'testimonial', 'faq'],
     }),
   ],
 
   schema: {
     types: schemaTypes,
     templates: (templates) => [
-      ...templates.filter((template) => template.schemaType !== 'homePage' && template.schemaType !== 'workPassPage' && template.schemaType !== 'studyAbroadPage'),
+      ...templates.filter((template) => template.schemaType !== 'homePage' && template.schemaType !== 'workPassPage' && template.schemaType !== 'studyAbroadPage' && template.schemaType !== 'uniMasterPage'),
       {
         id: 'home-page-vi',
         title: 'Trang chủ — Tiếng Việt',
@@ -62,6 +62,18 @@ export default defineConfig({
         id: 'study-abroad-page-en',
         title: 'Study Abroad Page — English',
         schemaType: 'studyAbroadPage',
+        value: {language: 'en'},
+      },
+      {
+        id: 'uni-master-page-vi',
+        title: 'Trang Đại học & Thạc sĩ — Tiếng Việt',
+        schemaType: 'uniMasterPage',
+        value: {language: 'vi'},
+      },
+      {
+        id: 'uni-master-page-en',
+        title: 'Uni & Master Page — English',
+        schemaType: 'uniMasterPage',
         value: {language: 'en'},
       },
     ],
