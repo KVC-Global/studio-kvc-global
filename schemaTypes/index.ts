@@ -10,6 +10,8 @@ import { studyAbroadPage } from './documents/studyAbroadPage'
 import { studyAbroadObjects } from './objects/studyAbroadSections'
 import { uniMasterPage } from './documents/uniMasterPage'
 import { uniMasterObjects } from './objects/uniMasterSections'
+import { privateStudyPage } from './documents/privateStudyPage'
+import { privateStudyObjects } from './objects/privateStudySections'
 
 export const schemaTypes = [
   homePage,
@@ -20,6 +22,8 @@ export const schemaTypes = [
   ...studyAbroadObjects,
   uniMasterPage,
   ...uniMasterObjects,
+  privateStudyPage,
+  ...privateStudyObjects,
   testimonial,
   partner,
   service,
