@@ -33,7 +33,9 @@ export const workPassHero = defineType({
       type: 'array',
       of: [defineArrayMember({ type: 'workPassStat' })],
       validation: (Rule) => Rule.max(3)
-    })
+    }),
+    string('googleReviewValue', 'Google review value (e.g., Google 4.9/5)'),
+    string('googleReviewLabel', 'Google review label (e.g., 250+ reviews)')
   ]
 })
 
