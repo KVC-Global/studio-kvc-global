@@ -20,14 +20,14 @@ export default defineConfig({
         {id: 'vi', title: 'Vietnamese'},
         {id: 'en', title: 'English'},
       ],
-      schemaTypes: ['homePage', 'workPassPage', 'studyAbroadPage', 'uniMasterPage', 'privateStudyPage', 'service', 'partner', 'testimonial', 'faq'],
+      schemaTypes: ['homePage', 'workPassPage', 'studyAbroadPage', 'uniMasterPage', 'privateStudyPage', 'publicStudyPage', 'service', 'partner', 'testimonial', 'faq'],
     }),
   ],
 
   schema: {
     types: schemaTypes,
     templates: (templates) => [
-      ...templates.filter((template) => template.schemaType !== 'homePage' && template.schemaType !== 'workPassPage' && template.schemaType !== 'studyAbroadPage' && template.schemaType !== 'uniMasterPage' && template.schemaType !== 'privateStudyPage'),
+      ...templates.filter((template) => template.schemaType !== 'homePage' && template.schemaType !== 'workPassPage' && template.schemaType !== 'studyAbroadPage' && template.schemaType !== 'uniMasterPage' && template.schemaType !== 'privateStudyPage' && template.schemaType !== 'publicStudyPage'),
       {
         id: 'home-page-vi',
         title: 'Trang chủ — Tiếng Việt',
@@ -86,6 +86,18 @@ export default defineConfig({
         id: 'private-study-page-en',
         title: 'Private Study Page — English',
         schemaType: 'privateStudyPage',
+        value: {language: 'en'},
+      },
+      {
+        id: 'public-study-page-vi',
+        title: 'Trang Du học Công lập — Tiếng Việt',
+        schemaType: 'publicStudyPage',
+        value: {language: 'vi'},
+      },
+      {
+        id: 'public-study-page-en',
+        title: 'Public Study Page — English',
+        schemaType: 'publicStudyPage',
         value: {language: 'en'},
       },
     ],

@@ -12,6 +12,8 @@ import { uniMasterPage } from './documents/uniMasterPage'
 import { uniMasterObjects } from './objects/uniMasterSections'
 import { privateStudyPage } from './documents/privateStudyPage'
 import { privateStudyObjects } from './objects/privateStudySections'
+import { publicStudyPage } from './documents/publicStudyPage'
+import { publicStudyObjects } from './objects/publicStudySections'
 
 export const schemaTypes = [
   homePage,
@@ -24,6 +26,8 @@ export const schemaTypes = [
   ...uniMasterObjects,
   privateStudyPage,
   ...privateStudyObjects,
+  publicStudyPage,
+  ...publicStudyObjects,
   testimonial,
   partner,
   service,
