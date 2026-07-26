@@ -1,9 +1,11 @@
-import { faq } from './documents/faq'
-import { homePage } from './documents/homePage'
-import { partner } from './documents/partner'
-import { service } from './documents/service'
-import { testimonial } from './documents/testimonial'
-import { homepageObjects } from './objects/homeSections'
+import {aboutPage} from './documents/aboutPage'
+import {contactPage} from './documents/contactPage'
+import {faq} from './documents/faq'
+import {homePage} from './documents/homePage'
+import {partner} from './documents/partner'
+import {service} from './documents/service'
+import {testimonial} from './documents/testimonial'
+import {homepageObjects} from './objects/homeSections'
 import { workPassPage } from './documents/workPassPage'
 import { workPassObjects } from './objects/workPassSections'
 import { studyAbroadPage } from './documents/studyAbroadPage'
@@ -14,10 +16,14 @@ import { privateStudyPage } from './documents/privateStudyPage'
 import { privateStudyObjects } from './objects/privateStudySections'
 import { publicStudyPage } from './documents/publicStudyPage'
 import { publicStudyObjects } from './objects/publicStudySections'
+import {pageObjects} from './objects/pageSections'
 
 export const schemaTypes = [
   homePage,
+  aboutPage,
+  contactPage,
   ...homepageObjects,
+  ...pageObjects,
   workPassPage,
   ...workPassObjects,
   studyAbroadPage,

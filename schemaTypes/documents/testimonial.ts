@@ -1,4 +1,4 @@
-import { defineType, defineField } from 'sanity'
+import {defineType, defineField} from 'sanity'
 
 export const testimonial = defineType({
   name: 'testimonial',
@@ -6,8 +6,8 @@ export const testimonial = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: "language",
-      type: "string",
+      name: 'language',
+      type: 'string',
       readOnly: true,
       hidden: true,
     }),
@@ -48,4 +48,33 @@ export const testimonial = defineType({
       validation: (Rule) => Rule.min(1).max(5),
     }),
   ],
+  preview: {
+    select: {
+      title: 'name',
+      role: 'role',
+      company: 'company',
+      language: 'language',
+      media: 'image',
+    },
+    prepare({
+      title,
+      role,
+      company,
+      language,
+      media,
+    }: {
+      title?: string
+      role?: string
+      company?: string
+      language?: string
+      media?: any
+    }) {
+      const parts = [role, company].filter(Boolean)
+      return {
+        title,
+        subtitle: [language?.toUpperCase(), parts.join(', ')].filter(Boolean).join(' — '),
+        media,
+      }
+    },
+  },
 })

@@ -1,10 +1,6 @@
 import type {StructureBuilder} from 'sanity/structure'
 
-const homepageDocument = (
-  S: StructureBuilder,
-  language: 'vi' | 'en',
-  title: string,
-) =>
+const homepageDocument = (S: StructureBuilder, language: 'vi' | 'en', title: string) =>
   S.listItem()
     .id(`home-page-${language}`)
     .title(title)
@@ -27,10 +23,5 @@ export const homeStructure = (S: StructureBuilder) =>
         .items([
           homepageDocument(S, 'vi', 'Trang chủ — Tiếng Việt'),
           homepageDocument(S, 'en', 'Homepage — English'),
-          S.divider(),
-          S.documentTypeListItem('service'),
-          S.documentTypeListItem('partner'),
-          S.documentTypeListItem('testimonial'),
-          S.documentTypeListItem('faq'),
         ]),
     )

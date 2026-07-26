@@ -1,4 +1,4 @@
-import { defineType, defineField } from 'sanity'
+import {defineType, defineField} from 'sanity'
 
 export const faq = defineType({
   name: 'faq',
@@ -6,8 +6,8 @@ export const faq = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: "language",
-      type: "string",
+      name: 'language',
+      type: 'string',
       readOnly: true,
       hidden: true,
     }),
@@ -30,10 +30,10 @@ export const faq = defineType({
       description: 'e.g., General, Study Abroad, Online Course, Work Pass',
       options: {
         list: [
-          { title: 'General', value: 'general' },
-          { title: 'Study Abroad', value: 'study-abroad' },
-          { title: 'Online Course', value: 'online-course' },
-          { title: 'Work Pass', value: 'work-pass' },
+          {title: 'General', value: 'general'},
+          {title: 'Study Abroad', value: 'study-abroad'},
+          {title: 'Online Course', value: 'online-course'},
+          {title: 'Work Pass', value: 'work-pass'},
         ],
       },
       validation: (Rule) => Rule.required(),
@@ -45,4 +45,17 @@ export const faq = defineType({
       initialValue: 0,
     }),
   ],
+  preview: {
+    select: {
+      title: 'question',
+      subtitle: 'category',
+      language: 'language',
+    },
+    prepare({title, subtitle, language}: {title?: string; subtitle?: string; language?: string}) {
+      return {
+        title,
+        subtitle: [language?.toUpperCase(), subtitle].filter(Boolean).join(' — '),
+      }
+    },
+  },
 })
