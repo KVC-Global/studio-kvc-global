@@ -24,6 +24,8 @@ export default defineConfig({
         'homePage',
         'aboutPage',
         'contactPage',
+        'khoaHocOnlinePage',
+        'dichVuPage',
         'service',
         'partner',
         'testimonial',
@@ -36,12 +38,14 @@ export default defineConfig({
     types: schemaTypes,
     templates: (templates) => [
       ...templates.filter(
-        (template) => !['homePage', 'aboutPage', 'contactPage'].includes(template.schemaType),
+        (template) => !['homePage', 'aboutPage', 'contactPage', 'khoaHocOnlinePage', 'dichVuPage'].includes(template.schemaType),
       ),
       ...[
         ['home-page', 'homePage', 'Trang chủ', 'Homepage'],
         ['about-page', 'aboutPage', 'Giới thiệu', 'About'],
         ['contact-page', 'contactPage', 'Liên hệ', 'Contact'],
+        ['khoa-hoc-online', 'khoaHocOnlinePage', 'Khoá học Online', 'Online Courses'],
+        ['dich-vu', 'dichVuPage', 'Dịch vụ', 'Services'],
       ].flatMap(([id, schemaType, viTitle, enTitle]) => [
         {
           id: `${id}-vi`,

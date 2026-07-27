@@ -1,12 +1,15 @@
 import type {StructureResolver} from 'sanity/structure'
 import {homeStructure} from './structures/homeStructure'
 import {aboutStructure, contactStructure} from './structures/pageStructure'
+import {khoaHocOnlineStructure, dichVuStructure} from './structures/servicePageStructure'
 
 const sharedDocumentTypes = new Set(['service', 'partner', 'testimonial', 'faq'])
 const allStructuredDocumentTypes = new Set([
   'homePage',
   'aboutPage',
   'contactPage',
+  'khoaHocOnlinePage',
+  'dichVuPage',
   ...sharedDocumentTypes,
 ])
 
@@ -20,7 +23,7 @@ export const structure: StructureResolver = (S) =>
         .child(
           S.list()
             .title('Pages')
-            .items([homeStructure(S), aboutStructure(S), contactStructure(S)]),
+            .items([homeStructure(S), aboutStructure(S), contactStructure(S), khoaHocOnlineStructure(S), dichVuStructure(S)]),
         ),
       S.listItem()
         .id('shared-content')
