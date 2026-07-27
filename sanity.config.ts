@@ -26,6 +26,7 @@ export default defineConfig({
         'contactPage',
         'khoaHocOnlinePage',
         'dichVuPage',
+        'onlineProgramPage',
         'service',
         'partner',
         'testimonial',
