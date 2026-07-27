@@ -18,6 +18,8 @@ export const khoaHocOnlinePage = defineType({
     defineField({name: 'whySection', title: 'Why choose online courses', type: 'khoaHocOnlineWhy', group: 'content'}),
     defineField({name: 'ctaSection', title: 'Call to action', type: 'khoaHocOnlineCta', group: 'content'}),
     defineField({name: 'testimonialsSection', title: 'Testimonials', type: 'khoaHocOnlineTestimonials', group: 'social'}),
+    defineField({name: 'servicesSection', title: 'Services', type: 'khoaHocOnlineServices', group: 'content'}),
+    defineField({name: 'faqsSection', title: 'FAQs', type: 'khoaHocOnlineFaqs', group: 'content'}),
     defineField({name: 'seo', title: 'SEO', type: 'sharedSeo', group: 'seo'}),
   ],
   preview: {

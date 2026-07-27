@@ -19,6 +19,7 @@ export const dichVuPage = defineType({
     defineField({name: 'processSection', title: 'How we work', type: 'dichVuProcess', group: 'content'}),
     defineField({name: 'partnersSection', title: 'Partners', type: 'dichVuPartners', group: 'partners'}),
     defineField({name: 'testimonialsSection', title: 'Testimonials', type: 'dichVuTestimonials', group: 'social'}),
+    defineField({name: 'faqsSection', title: 'FAQs', type: 'dichVuFaqs', group: 'social'}),
     defineField({name: 'seo', title: 'SEO', type: 'sharedSeo', group: 'seo'}),
   ],
   preview: {

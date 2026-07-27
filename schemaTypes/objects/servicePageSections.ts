@@ -236,13 +236,71 @@ export const dichVuPartners = defineType({
   ],
 })
 
+// --- Shared faq type ---
+
+const faqItem = (name: string, title: string) =>
+  defineType({
+    name,
+    title,
+    type: 'object',
+    fields: [string('question', 'Question'), text('answer', 'Answer')],
+    preview: {select: {title: 'question'}},
+  })
+
+const serviceCard = (name: string, title: string) =>
+  defineType({
+    name,
+    title,
+    type: 'object',
+    fields: [
+      string('title', 'Title'),
+      string('icon', 'Icon name'),
+      string('href', 'Link'),
+      string('ctaText', 'CTA text'),
+    ],
+    preview: {select: {title: 'title'}},
+  })
+
+export const khoaHocOnlineServices = defineType({
+  name: 'khoaHocOnlineServices',
+  title: 'Services section',
+  type: 'object',
+  fields: [
+    string('title', 'Title'),
+    defineField({name: 'services', title: 'Services', type: 'array', of: [defineArrayMember({type: 'khoaHocOnlineServiceCard'})]}),
+  ],
+})
+
+export const khoaHocOnlineFaqs = defineType({
+  name: 'khoaHocOnlineFaqs',
+  title: 'FAQs section',
+  type: 'object',
+  fields: [
+    string('title', 'Title'),
+    defineField({name: 'faqs', title: 'FAQs', type: 'array', of: [defineArrayMember({type: 'khoaHocOnlineFaqItem'})]}),
+  ],
+})
+
 // --- Collected type lists ---
 
 // Reusable shared icon/testimonial types
 export const khoaHocOnlineWhyItem = iconItem('khoaHocOnlineWhyItem', 'Why item')
 export const khoaHocOnlineTestimonialItem = testimonialItem('khoaHocOnlineTestimonialItem', 'Testimonial')
+export const khoaHocOnlineFaqItem = faqItem('khoaHocOnlineFaqItem', 'FAQ item')
+export const khoaHocOnlineServiceCard = serviceCard('khoaHocOnlineServiceCard', 'Service card')
 export const dichVuWhyItem = iconItem('dichVuWhyItem', 'Why item')
 export const dichVuTestimonialItem = testimonialItem('dichVuTestimonialItem', 'Testimonial')
+export const dichVuFaqItem = faqItem('dichVuFaqItem', 'FAQ item')
+
+export const dichVuFaqs = defineType({
+  name: 'dichVuFaqs',
+  title: 'FAQs section',
+  type: 'object',
+  fields: [
+    string('title', 'Title'),
+    defineField({name: 'faqs', title: 'FAQs', type: 'array', of: [defineArrayMember({type: 'dichVuFaqItem'})]}),
+  ],
+})
 
 export const servicePageObjects = [
   // Shared
@@ -258,6 +316,10 @@ export const servicePageObjects = [
   khoaHocOnlineTestimonialItem,
   khoaHocOnlineTestimonials,
   khoaHocOnlineCta,
+  khoaHocOnlineFaqItem,
+  khoaHocOnlineServiceCard,
+  khoaHocOnlineServices,
+  khoaHocOnlineFaqs,
   // Dich vu
   dichVuStat,
   dichVuHero,
@@ -269,5 +331,7 @@ export const servicePageObjects = [
   dichVuProcess,
   dichVuTestimonialItem,
   dichVuTestimonials,
+  dichVuFaqItem,
+  dichVuFaqs,
   dichVuPartners,
 ]
