@@ -14,7 +14,9 @@ export const dichVuPage = defineType({
   fields: [
     defineField({name: 'language', type: 'string', readOnly: true, hidden: true}),
     defineField({name: 'heroSection', title: 'Hero section', type: 'dichVuHero', group: 'hero'}),
+    defineField({name: 'introSection', title: 'Intro section', type: 'dichVuIntro', group: 'content'}),
     defineField({name: 'serviceCategories', title: 'Service categories', type: 'dichVuServiceCategories', group: 'content'}),
+    defineField({name: 'accordionSections', title: 'Detailed service accordion', type: 'dichVuServiceAccordion', group: 'content'}),
     defineField({name: 'whySection', title: 'Why choose KVC', type: 'dichVuWhy', group: 'content'}),
     defineField({name: 'processSection', title: 'How we work', type: 'dichVuProcess', group: 'content'}),
     defineField({name: 'partnersSection', title: 'Partners', type: 'dichVuPartners', group: 'partners'}),

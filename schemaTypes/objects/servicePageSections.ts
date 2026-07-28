@@ -98,6 +98,14 @@ const khoaHocOnlineProgramItem = defineType({
   preview: {select: {title: 'name', subtitle: 'duration'}},
 })
 
+const khoaHocOnlineSupportStep = defineType({
+  name: 'khoaHocOnlineSupportStep',
+  title: 'Support step',
+  type: 'object',
+  fields: [string('icon', 'Icon name'), string('text', 'Text')],
+  preview: {select: {title: 'text', subtitle: 'icon'}},
+})
+
 export const khoaHocOnlinePrograms = defineType({
   name: 'khoaHocOnlinePrograms',
   title: 'Programs section',
@@ -105,6 +113,9 @@ export const khoaHocOnlinePrograms = defineType({
   fields: [
     string('title', 'Title'),
     defineField({name: 'items', title: 'Programs', type: 'array', of: [defineArrayMember({type: 'khoaHocOnlineProgramItem'})]}),
+    defineField({name: 'requirements', title: 'Requirements', type: 'array', of: [defineArrayMember({type: 'string'})]}),
+    defineField({name: 'prospects', title: 'Prospects', type: 'array', of: [defineArrayMember({type: 'string'})]}),
+    defineField({name: 'supportSteps', title: 'Support steps', type: 'array', of: [defineArrayMember({type: 'khoaHocOnlineSupportStep'})]}),
   ],
 })
 
@@ -113,6 +124,7 @@ export const khoaHocOnlineWhy = defineType({
   title: 'Why choose online courses',
   type: 'object',
   fields: [
+    string('eyebrow', 'Eyebrow'),
     string('title', 'Title'),
     defineField({name: 'items', title: 'Reasons', type: 'array', of: [defineArrayMember({type: 'khoaHocOnlineWhyItem'})]}),
   ],
@@ -123,6 +135,7 @@ export const khoaHocOnlineTestimonials = defineType({
   title: 'Testimonials section',
   type: 'object',
   fields: [
+    string('eyebrow', 'Eyebrow'),
     string('title', 'Title'),
     defineField({name: 'testimonials', title: 'Testimonials', type: 'array', of: [defineArrayMember({type: 'khoaHocOnlineTestimonialItem'})]}),
   ],
@@ -150,11 +163,15 @@ export const dichVuHero = defineType({
   title: 'Hero section',
   type: 'object',
   fields: [
+    image('backgroundImage', 'Background image'),
+    string('backgroundImageAlt', 'Background image alt'),
     string('eyebrow', 'Eyebrow'),
     string('title', 'Title'),
     text('description', 'Description'),
     string('primaryButtonLabel', 'Primary button label'),
     string('primaryButtonHref', 'Primary button href'),
+    string('secondaryButtonLabel', 'Secondary button label'),
+    string('secondaryButtonHref', 'Secondary button href'),
     defineField({name: 'stats', title: 'Stats', type: 'array', of: [defineArrayMember({type: 'dichVuStat'})], validation: (Rule) => Rule.max(4)}),
   ],
 })
@@ -179,6 +196,7 @@ export const dichVuServiceCategories = defineType({
   title: 'Service categories',
   type: 'object',
   fields: [
+    string('eyebrow', 'Eyebrow'),
     string('title', 'Title'),
     defineField({name: 'categories', title: 'Categories', type: 'array', of: [defineArrayMember({type: 'dichVuCategory'})]}),
   ],
@@ -189,6 +207,7 @@ export const dichVuWhy = defineType({
   title: 'Why choose KVC',
   type: 'object',
   fields: [
+    string('eyebrow', 'Eyebrow'),
     string('title', 'Title'),
     defineField({name: 'items', title: 'Reasons', type: 'array', of: [defineArrayMember({type: 'dichVuWhyItem'})]}),
   ],
@@ -207,6 +226,7 @@ export const dichVuProcess = defineType({
   title: 'Process section',
   type: 'object',
   fields: [
+    string('eyebrow', 'Eyebrow'),
     string('title', 'Title'),
     defineField({name: 'steps', title: 'Steps', type: 'array', of: [defineArrayMember({type: 'dichVuProcessStep'})]}),
   ],
@@ -217,6 +237,7 @@ export const dichVuTestimonials = defineType({
   title: 'Testimonials section',
   type: 'object',
   fields: [
+    string('eyebrow', 'Eyebrow'),
     string('title', 'Title'),
     defineField({name: 'testimonials', title: 'Testimonials', type: 'array', of: [defineArrayMember({type: 'dichVuTestimonialItem'})]}),
   ],
@@ -227,12 +248,107 @@ export const dichVuPartners = defineType({
   title: 'Partners section',
   type: 'object',
   fields: [
+    string('eyebrow', 'Eyebrow'),
     string('title', 'Title'),
     defineField({
       name: 'partners', title: 'Partners', type: 'array',
       of: [defineArrayMember({type: 'reference', to: [{type: 'partner'}]})],
       options: {sortable: true},
     }),
+  ],
+})
+
+// --- Dich Vu Intro section ---
+
+const dichVuIntroPillar = defineType({
+  name: 'dichVuIntroPillar',
+  title: 'Intro pillar',
+  type: 'object',
+  fields: [string('icon', 'Icon name'), string('label', 'Label')],
+  preview: {select: {title: 'label', subtitle: 'icon'}},
+})
+
+export const dichVuIntro = defineType({
+  name: 'dichVuIntro',
+  title: 'Intro section',
+  type: 'object',
+  fields: [
+    string('eyebrow', 'Eyebrow'),
+    string('title', 'Title'),
+    defineField({name: 'pillars', title: 'Pillars', type: 'array', of: [defineArrayMember({type: 'dichVuIntroPillar'})], validation: (Rule) => Rule.max(5)}),
+    text('paragraph1', 'Paragraph 1'),
+    text('paragraph2', 'Paragraph 2 (highlighted)'),
+  ],
+})
+
+// --- Dich Vu Service Accordion (detailed breakdown) ---
+
+const dichVuServiceChecklistGroup = defineType({
+  name: 'dichVuServiceChecklistGroup',
+  title: 'Checklist group',
+  type: 'object',
+  fields: [
+    string('title', 'Group title'),
+    defineField({name: 'items', title: 'Items', type: 'array', of: [defineArrayMember({type: 'string'})]}),
+  ],
+  preview: {select: {title: 'title'}},
+})
+
+const dichVuTagList = defineType({
+  name: 'dichVuTagList',
+  title: 'Tag list',
+  type: 'object',
+  fields: [
+    string('label', 'Label'),
+    defineField({name: 'items', title: 'Items', type: 'array', of: [defineArrayMember({type: 'string'})]}),
+  ],
+})
+
+const dichVuSingaporeSubTab = defineType({
+  name: 'dichVuSingaporeSubTab',
+  title: 'Singapore sub-tab',
+  type: 'object',
+  fields: [
+    string('label', 'Tab label'),
+    string('icon', 'Icon name'),
+    defineField({name: 'intro', title: 'Intro paragraphs', type: 'array', of: [defineArrayMember({type: 'text'})]}),
+    defineField({name: 'services', title: 'Service checklists', type: 'array', of: [defineArrayMember({type: 'dichVuServiceChecklistGroup'})]}),
+    defineField({name: 'audience', title: 'Target audience', type: 'dichVuTagList'}),
+    defineField({name: 'benefits', title: 'Benefits', type: 'dichVuTagList'}),
+  ],
+  preview: {select: {title: 'label'}},
+})
+
+const dichVuServiceAccordionSection = defineType({
+  name: 'dichVuServiceAccordionSection',
+  title: 'Accordion section',
+  type: 'object',
+  fields: [
+    string('tag', 'Tag label'),
+    string('heading', 'Heading'),
+    string('headingAccent', 'Heading accent'),
+    defineField({name: 'intro', title: 'Intro paragraphs', type: 'array', of: [defineArrayMember({type: 'text'})]}),
+    defineField({name: 'services', title: 'Service checklists', type: 'array', of: [defineArrayMember({type: 'dichVuServiceChecklistGroup'})]}),
+    defineField({name: 'audience', title: 'Target audience', type: 'dichVuTagList'}),
+    defineField({name: 'benefits', title: 'Benefits', type: 'dichVuTagList'}),
+    defineField({name: 'singaporeSubTabs', title: 'Singapore sub-tabs', type: 'array', of: [defineArrayMember({type: 'dichVuSingaporeSubTab'})]}),
+    string('ctaLabel', 'CTA label'),
+    string('ctaHref', 'CTA href'),
+    string('ctaIcon', 'CTA icon name'),
+    text('crossLinkText', 'Cross-link paragraph'),
+    image('image', 'Image'),
+    string('imageAlt', 'Image alt'),
+  ],
+  preview: {select: {title: 'tag', subtitle: 'heading'}},
+})
+
+export const dichVuServiceAccordion = defineType({
+  name: 'dichVuServiceAccordion',
+  title: 'Service accordion',
+  type: 'object',
+  fields: [
+    string('eyebrow', 'Eyebrow'),
+    defineField({name: 'sections', title: 'Accordion sections', type: 'array', of: [defineArrayMember({type: 'dichVuServiceAccordionSection'})]}),
   ],
 })
 
@@ -266,6 +382,7 @@ export const khoaHocOnlineServices = defineType({
   title: 'Services section',
   type: 'object',
   fields: [
+    string('eyebrow', 'Eyebrow'),
     string('title', 'Title'),
     defineField({name: 'services', title: 'Services', type: 'array', of: [defineArrayMember({type: 'khoaHocOnlineServiceCard'})]}),
   ],
@@ -276,6 +393,7 @@ export const khoaHocOnlineFaqs = defineType({
   title: 'FAQs section',
   type: 'object',
   fields: [
+    string('eyebrow', 'Eyebrow'),
     string('title', 'Title'),
     defineField({name: 'faqs', title: 'FAQs', type: 'array', of: [defineArrayMember({type: 'khoaHocOnlineFaqItem'})]}),
   ],
@@ -297,6 +415,7 @@ export const dichVuFaqs = defineType({
   title: 'FAQs section',
   type: 'object',
   fields: [
+    string('eyebrow', 'Eyebrow'),
     string('title', 'Title'),
     defineField({name: 'faqs', title: 'FAQs', type: 'array', of: [defineArrayMember({type: 'dichVuFaqItem'})]}),
   ],
@@ -310,6 +429,7 @@ export const servicePageObjects = [
   khoaHocOnlineHero,
   khoaHocOnlineIntro,
   khoaHocOnlineProgramItem,
+  khoaHocOnlineSupportStep,
   khoaHocOnlinePrograms,
   khoaHocOnlineWhyItem,
   khoaHocOnlineWhy,
@@ -323,6 +443,8 @@ export const servicePageObjects = [
   // Dich vu
   dichVuStat,
   dichVuHero,
+  dichVuIntroPillar,
+  dichVuIntro,
   dichVuCategory,
   dichVuServiceCategories,
   dichVuWhyItem,
@@ -334,4 +456,10 @@ export const servicePageObjects = [
   dichVuFaqItem,
   dichVuFaqs,
   dichVuPartners,
+  // Dich vu — service accordion (detailed breakdown)
+  dichVuServiceChecklistGroup,
+  dichVuTagList,
+  dichVuSingaporeSubTab,
+  dichVuServiceAccordionSection,
+  dichVuServiceAccordion,
 ]
