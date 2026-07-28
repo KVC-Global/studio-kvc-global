@@ -21,10 +21,11 @@ export default defineConfig({
         {id: 'en', title: 'English'},
       ],
       schemaTypes: [
-        'homePage',
+        'homePage', 'workPassPage', 'studyAbroadPage', 'uniMasterPage', 'privateStudyPage', 'publicStudyPage',
         'aboutPage',
         'contactPage',
         'service',
+        'relatedService',
         'partner',
         'testimonial',
         'faq',
@@ -36,12 +37,17 @@ export default defineConfig({
     types: schemaTypes,
     templates: (templates) => [
       ...templates.filter(
-        (template) => !['homePage', 'aboutPage', 'contactPage'].includes(template.schemaType),
+        (template) => !['homePage', 'aboutPage', 'contactPage', 'workPassPage', 'studyAbroadPage', 'uniMasterPage', 'privateStudyPage', 'publicStudyPage'].includes(template.schemaType),
       ),
       ...[
         ['home-page', 'homePage', 'Trang chủ', 'Homepage'],
         ['about-page', 'aboutPage', 'Giới thiệu', 'About'],
         ['contact-page', 'contactPage', 'Liên hệ', 'Contact'],
+        ['work-pass-page', 'workPassPage', 'Trang Work Pass', 'Work Pass Page'],
+        ['study-abroad-page', 'studyAbroadPage', 'Trang Du học', 'Study Abroad Page'],
+        ['uni-master-page', 'uniMasterPage', 'Trang Đại học & Thạc sĩ', 'University & Master Page'],
+        ['private-study-page', 'privateStudyPage', 'Trang Du học Tư thục', 'Private Study Page'],
+        ['public-study-page', 'publicStudyPage', 'Trang Du học Công lập', 'Public Study Page'],
       ].flatMap(([id, schemaType, viTitle, enTitle]) => [
         {
           id: `${id}-vi`,

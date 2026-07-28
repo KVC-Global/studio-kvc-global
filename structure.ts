@@ -1,12 +1,22 @@
 import type {StructureResolver} from 'sanity/structure'
 import {homeStructure} from './structures/homeStructure'
+import {workPassStructure} from './structures/workPassStructure'
+import {studyAbroadStructure} from './structures/studyAbroadStructure'
+import {uniMasterStructure} from './structures/uniMasterStructure'
+import {privateStudyStructure} from './structures/privateStudyStructure'
+import {publicStudyStructure} from './structures/publicStudyStructure'
 import {aboutStructure, contactStructure} from './structures/pageStructure'
 
-const sharedDocumentTypes = new Set(['service', 'partner', 'testimonial', 'faq'])
+const sharedDocumentTypes = new Set(['service', 'relatedService', 'partner', 'testimonial', 'faq'])
 const allStructuredDocumentTypes = new Set([
   'homePage',
   'aboutPage',
   'contactPage',
+  'workPassPage',
+  'studyAbroadPage',
+  'uniMasterPage',
+  'privateStudyPage',
+  'publicStudyPage',
   ...sharedDocumentTypes,
 ])
 
@@ -20,7 +30,18 @@ export const structure: StructureResolver = (S) =>
         .child(
           S.list()
             .title('Pages')
-            .items([homeStructure(S), aboutStructure(S), contactStructure(S)]),
+            .items([
+              homeStructure(S),
+              aboutStructure(S),
+              contactStructure(S),
+              S.divider(),
+              workPassStructure(S),
+              S.divider(),
+              studyAbroadStructure(S),
+              uniMasterStructure(S),
+              privateStudyStructure(S),
+              publicStudyStructure(S),
+            ]),
         ),
       S.listItem()
         .id('shared-content')
@@ -31,6 +52,7 @@ export const structure: StructureResolver = (S) =>
             .items([
               S.documentTypeListItem('partner').title('Partners'),
               S.documentTypeListItem('service').title('Services'),
+              S.documentTypeListItem('relatedService').title('Related Services (Study)'),
               S.documentTypeListItem('testimonial').title('Testimonials'),
               S.documentTypeListItem('faq').title('FAQs'),
             ]),
