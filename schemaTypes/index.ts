@@ -3,7 +3,6 @@ import {contactPage} from './documents/contactPage'
 import {dichVuPage} from './documents/dichVuPage'
 import {faq} from './documents/faq'
 import {homePage} from './documents/homePage'
-import {khoaHocOnlinePage} from './documents/khoaHocOnlinePage'
 import {onlineProgramPage} from './documents/onlineProgramPage'
 import {partner} from './documents/partner'
 import {service} from './documents/service'
@@ -17,7 +16,6 @@ export const schemaTypes = [
   homePage,
   aboutPage,
   contactPage,
-  khoaHocOnlinePage,
   dichVuPage,
   onlineProgramPage,
   ...homepageObjects,

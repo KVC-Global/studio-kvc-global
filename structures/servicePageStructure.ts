@@ -2,7 +2,7 @@ import type {StructureBuilder} from 'sanity/structure'
 
 const localizedDocument = (
   S: StructureBuilder,
-  schemaType: 'khoaHocOnlinePage' | 'dichVuPage',
+  schemaType: 'dichVuPage',
   slug: string,
   language: 'vi' | 'en',
   title: string,
@@ -17,19 +17,6 @@ const localizedDocument = (
         .schemaType(schemaType)
         .documentId(`${slug}-${language}`)
         .initialValueTemplate(`${slug}-${language}`),
-    )
-
-export const khoaHocOnlineStructure = (S: StructureBuilder) =>
-  S.listItem()
-    .id('khoa-hoc-online')
-    .title('Khoá học Online')
-    .child(
-      S.list()
-        .title('Khoá học Online')
-        .items([
-          localizedDocument(S, 'khoaHocOnlinePage', 'khoa-hoc-online', 'vi', 'Khoá học Online — Tiếng Việt'),
-          localizedDocument(S, 'khoaHocOnlinePage', 'khoa-hoc-online', 'en', 'Online Courses — English'),
-        ]),
     )
 
 export const dichVuStructure = (S: StructureBuilder) =>
