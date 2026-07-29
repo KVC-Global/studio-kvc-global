@@ -32,7 +32,6 @@ export const dichVuHero = defineType({
     string('backgroundImageAlt', 'Background image alt'),
     string('eyebrow', 'Eyebrow'),
     string('title', 'Title'),
-    text('description', 'Description'),
     string('primaryButtonLabel', 'Primary button label'),
     string('primaryButtonHref', 'Primary button href'),
     string('secondaryButtonLabel', 'Secondary button label'),
@@ -64,22 +63,7 @@ export const dichVuIntro = defineType({
   ],
 })
 
-// --- Dich Vu Service Categories ---
-
-const dichVuCategory = defineType({
-  name: 'dichVuCategory',
-  title: 'Service category',
-  type: 'object',
-  fields: [
-    string('icon', 'Icon name'),
-    string('title', 'Title'),
-    text('description', 'Description'),
-    string('href', 'Link URL'),
-    image('image', 'Image'),
-    string('imageAlt', 'Image alt'),
-  ],
-  preview: {select: {title: 'title', media: 'image'}},
-})
+// --- Dich Vu Service Categories (section heading only — categories are rendered by the accordion) ---
 
 export const dichVuServiceCategories = defineType({
   name: 'dichVuServiceCategories',
@@ -88,7 +72,6 @@ export const dichVuServiceCategories = defineType({
   fields: [
     string('eyebrow', 'Eyebrow'),
     string('title', 'Title'),
-    defineField({name: 'categories', title: 'Categories', type: 'array', of: [defineArrayMember({type: 'dichVuCategory'})]}),
   ],
 })
 
@@ -158,7 +141,6 @@ export const dichVuServiceAccordion = defineType({
   title: 'Service accordion',
   type: 'object',
   fields: [
-    string('eyebrow', 'Eyebrow'),
     defineField({name: 'sections', title: 'Accordion sections', type: 'array', of: [defineArrayMember({type: 'dichVuServiceAccordionSection'})]}),
   ],
 })
@@ -170,7 +152,6 @@ export const servicePageObjects = [
   dichVuHero,
   dichVuIntroPillar,
   dichVuIntro,
-  dichVuCategory,
   dichVuServiceCategories,
   // Dich Vu — service accordion (detailed breakdown)
   dichVuServiceChecklistGroup,
