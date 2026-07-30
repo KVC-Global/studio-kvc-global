@@ -7,7 +7,15 @@ import {privateStudyStructure} from './structures/privateStudyStructure'
 import {publicStudyStructure} from './structures/publicStudyStructure'
 import {aboutStructure, contactStructure} from './structures/pageStructure'
 
-const sharedDocumentTypes = new Set(['service', 'relatedService', 'partner', 'testimonial', 'faq'])
+const sharedDocumentTypes = new Set([
+  'service',
+  'relatedService',
+  'partner',
+  'testimonial',
+  'faq',
+  'siteSettings',
+  'companyInfo',
+])
 const allStructuredDocumentTypes = new Set([
   'homePage',
   'aboutPage',
@@ -41,6 +49,49 @@ export const structure: StructureResolver = (S) =>
               uniMasterStructure(S),
               privateStudyStructure(S),
               publicStudyStructure(S),
+            ]),
+        ),
+      S.listItem()
+        .id('website')
+        .title('Website')
+        .child(
+          S.list()
+            .title('Website')
+            .items([
+              S.listItem()
+                .id('site-settings-vi')
+                .title('Header & footer — Tiếng Việt')
+                .child(
+                  S.document()
+                    .id('site-settings-vi')
+                    .title('Header & footer — Tiếng Việt')
+                    .schemaType('siteSettings')
+                    .documentId('site-settings-vi')
+                    .initialValueTemplate('site-settings-vi'),
+                ),
+              S.listItem()
+                .id('site-settings-en')
+                .title('Header & footer — English')
+                .child(
+                  S.document()
+                    .id('site-settings-en')
+                    .title('Header & footer — English')
+                    .schemaType('siteSettings')
+                    .documentId('site-settings-en')
+                    .initialValueTemplate('site-settings-en'),
+                ),
+              S.divider(),
+              S.listItem()
+                .id('company-info')
+                .title('Company information')
+                .child(
+                  S.document()
+                    .id('company-info')
+                    .title('Company information')
+                    .schemaType('companyInfo')
+                    .documentId('company-info')
+                    .initialValueTemplate('company-info'),
+                ),
             ]),
         ),
       S.listItem()
