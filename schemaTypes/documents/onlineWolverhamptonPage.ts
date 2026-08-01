@@ -13,9 +13,9 @@ export const onlineWolverhamptonPage = defineType({
   fields: [
     defineField({name: 'language', type: 'string', readOnly: true, hidden: true}),
     defineField({name: 'heroSection', title: 'Hero section', type: 'onlineProgramHero', group: 'hero'}),
-    defineField({name: 'introSection', title: 'Intro section (Giới thiệu trường)', type: 'onlineProgramIntro', group: 'intro'}),
+    defineField({name: 'introSection', title: 'Intro section (Giới thiệu trường)', type: 'onlineProgramWolverIntro', group: 'intro'}),
     defineField({name: 'whySection', title: 'Why choose Wolverhampton', type: 'onlineProgramWhy', group: 'content'}),
-    defineField({name: 'kvcSupportSection', title: 'KVC Global Support (Hỗ trợ từ KVC)', type: 'onlineProgramSupport', group: 'content'}),
+    defineField({name: 'kvcSupportSection', title: 'Why KVC Global?', type: 'onlineProgramSupport', group: 'content'}),
     defineField({name: 'learningFormatsSection', title: 'Learning format', type: 'onlineProgramFormat', group: 'content'}),
     defineField({name: 'targetAudienceSection', title: 'Target audience', type: 'onlineProgramAudience', group: 'content'}),
     defineField({name: 'benefitsSection', title: 'Benefits section', type: 'onlineProgramBenefits', group: 'content'}),

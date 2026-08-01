@@ -1,4 +1,5 @@
 import {defineArrayMember, defineField, defineType} from 'sanity'
+import {onlineProgramWolverIntro} from './onlineProgramWolverIntro'
 
 const string = (name: string, title: string) => defineField({name, title, type: 'string'})
 const text = (name: string, title: string) => defineField({name, title, type: 'text', rows: 4})
@@ -86,8 +87,26 @@ export const onlineProgramSupport = defineType({
   title: 'Support list',
   type: 'object',
   fields: [
-    string('title', 'Title'),
-    defineField({name: 'items', title: 'Items', type: 'array', of: [defineArrayMember({type: 'string'})]}),
+    defineField({
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+      initialValue: 'Vì sao học qua KVC Global?',
+    }),
+    defineField({
+      name: 'items',
+      title: 'Items',
+      type: 'array',
+      of: [defineArrayMember({type: 'string'})],
+      initialValue: [
+        'Tư vấn lựa chọn chương trình phù hợp.',
+        'Hỗ trợ hồ sơ nhập học.',
+        'Hướng dẫn học tập trực tuyến.',
+        'Theo dõi tiến độ học.',
+        'Hỗ trợ thực hiện luận văn (Dissertation).',
+        'Đồng hành cho đến khi nhận bằng.',
+      ],
+    }),
   ],
 })
 
@@ -299,5 +318,6 @@ export const onlineProgramObjects = [
   onlineProgramCta,
   programCard,
   onlineProgramPrograms,
+  onlineProgramWolverIntro,
 ]
 
