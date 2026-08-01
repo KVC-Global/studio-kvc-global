@@ -1,0 +1,95 @@
+import {getCliClient} from 'sanity/cli'
+
+function slugify(text: string) {
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)+/g, '')
+}
+
+async function main() {
+  const client = getCliClient({apiVersion: '2026-07-18'}).withConfig({perspective: 'drafts'})
+
+  console.log('Fetching subpages...')
+  const pages = await client.fetch(`
+    *[_type in ["workPassPage", "studyAbroadPage", "uniMasterPage", "privateStudyPage", "publicStudyPage"]]{
+      _id,
+      _type,
+      language,
+      servicesSection
+    }
+  `)
+
+  console.log(`Found ${pages.length} pages. Migrating related services...`)
+
+  for (const page of pages) {
+    const services = page.servicesSection?.services
+    if (!services || !Array.isArray(services)) {
+      continue
+    }
+
+    const language = page.language || 'vi'
+    let hasChanges = false
+    const newServices = []
+
+    for (const item of services) {
+      if (item._type === 'reference') {
+        // Already a reference
+        newServices.push(item)
+        continue
+      }
+
+      // It's an inline item, migrate it to a shared relatedService document
+      const title = item.title
+      if (!title) {
+        newServices.push(item)
+        continue
+      }
+
+      const ctaText = item.ctaText || item.cta || 'Tìm hiểu ngay'
+      const icon = item.icon || 'GraduationCap'
+      const href = item.href || '#'
+
+      const docId = `related-service-${language}-${slugify(title)}`
+
+      console.log(`Migrating inline item "${title}" [${language}] -> document ${docId}`)
+
+      const doc = {
+        _id: docId,
+        _type: 'relatedService',
+        language,
+        title,
+        ctaText,
+        icon,
+        href,
+      }
+
+      // Create document if not exists
+      await client.createIfNotExists(doc)
+
+      newServices.push({
+        _key: item._key || Math.random().toString(36).substring(2, 9),
+        _type: 'reference',
+        _ref: docId,
+      })
+      hasChanges = true
+    }
+
+    if (hasChanges) {
+      console.log(`Patching document ${page._id}...`)
+      await client
+        .patch(page._id)
+        .set({'servicesSection.services': newServices})
+        .commit()
+    }
+  }
+
+  console.log('Migration completed successfully!')
+}
+
+main().catch((error) => {
+  console.error(error)
+  process.exitCode = 1
+})
