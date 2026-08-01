@@ -379,11 +379,11 @@ const othmData = (lang: 'vi' | 'en') => {
     targetAudienceSection: {
       title: isVi ? 'Đối tượng phù hợp' : 'Target Audience',
       items: [
-        { icon: 'GraduationCap', title: isVi ? 'Sinh viên' : 'Students', description: isVi ? 'Mong muốn sở hữu bằng cấp quốc tế để tăng lợi thế cạnh tranh trên thị trường lao động.' : 'Aiming for international degrees to boost competitiveness in the job market.' },
-        { icon: 'Briefcase', title: isVi ? 'Người đi làm' : 'Working Professionals', description: isVi ? 'Cần nâng cao năng lực quản lý và chuyên môn mà không gián đoạn công việc hiện tại.' : 'Upgrading management skills without stopping current work.' },
-        { icon: 'Building2', title: isVi ? 'Nhà quản lý & Chủ doanh nghiệp' : 'Managers & Business Owners', description: isVi ? 'Phát triển tư duy chiến lược và kỹ năng lãnh đạo theo chuẩn quốc tế.' : 'Developing strategic thinking and leadership under global standards.' },
-        { icon: 'Globe', title: isVi ? 'Người có kế hoạch du học' : 'Prospective Study Abroad Students', description: isVi ? 'Chuẩn bị lộ trình chuyển tiếp lên đại học hoặc thạc sĩ tại Anh và các quốc gia khác.' : 'Preparing top-up pathways to UK Bachelor or Master degrees.' },
-        { icon: 'Clock', title: isVi ? 'Người cần linh hoạt' : 'Learners Needing Flexibility', description: isVi ? 'Học tập theo tiêu chuẩn Anh Quốc với thời gian và địa điểm hoàn toàn chủ động.' : 'Studying under UK standards with complete control of time and venue.' },
+        { title: isVi ? 'Sinh viên' : 'Students', description: isVi ? 'Mong muốn sở hữu bằng cấp quốc tế để tăng lợi thế cạnh tranh trên thị trường lao động.' : 'Aiming for international degrees to boost competitiveness in the job market.' },
+        { title: isVi ? 'Người đi làm' : 'Working Professionals', description: isVi ? 'Cần nâng cao năng lực quản lý và chuyên môn mà không gián đoạn công việc hiện tại.' : 'Upgrading management skills without stopping current work.' },
+        { title: isVi ? 'Nhà quản lý & Chủ doanh nghiệp' : 'Managers & Business Owners', description: isVi ? 'Phát triển tư duy chiến lược và kỹ năng lãnh đạo theo chuẩn quốc tế.' : 'Developing strategic thinking and leadership under global standards.' },
+        { title: isVi ? 'Người có kế hoạch du học' : 'Prospective Study Abroad Students', description: isVi ? 'Chuẩn bị lộ trình chuyển tiếp lên đại học hoặc thạc sĩ tại Anh và các quốc gia khác.' : 'Preparing top-up pathways to UK Bachelor or Master degrees.' },
+        { title: isVi ? 'Người cần linh hoạt' : 'Learners Needing Flexibility', description: isVi ? 'Học tập theo tiêu chuẩn Anh Quốc với thời gian và địa điểm hoàn toàn chủ động.' : 'Studying under UK standards with complete control of time and venue.' },
       ],
     },
     benefitsSection: {
@@ -569,11 +569,11 @@ const qualifiData = (lang: 'vi' | 'en') => {
     targetAudienceSection: {
       title: isVi ? 'Đối tượng phù hợp' : 'Target Audience',
       items: [
-        { icon: 'GraduationCap', title: isVi ? 'Sinh viên' : 'Students', description: isVi ? 'Mong muốn sở hữu bằng cấp quốc tế được công nhận rộng rãi để khởi đầu sự nghiệp thuận lợi.' : 'Seeking globally recognized UK diplomas for a career headstart.' },
-        { icon: 'Briefcase', title: isVi ? 'Người đi làm' : 'Working Professionals', description: isVi ? 'Cần nâng cao trình độ chuyên môn và kỹ năng thực tiễn mà không phải tạm dừng công việc.' : 'Upgrading professional skills without interrupting current jobs.' },
-        { icon: 'Building2', title: isVi ? 'Chủ doanh nghiệp' : 'Business Owners', description: isVi ? 'Phát triển năng lực quản lý và tư duy chiến lược để dẫn dắt doanh nghiệp vươn xa.' : 'Building strategic leadership to expand business growth.' },
-        { icon: 'Globe', title: isVi ? 'Người có kế hoạch du học' : 'Study Abroad Candidates', description: isVi ? 'Chuẩn bị nền tảng vững chắc để chuyển tiếp lên các chương trình tại Anh và quốc tế.' : 'Building a solid foundation for UK degree top-up.' },
-        { icon: 'Clock', title: isVi ? 'Người cần linh hoạt' : 'Flexible Learners', description: isVi ? 'Học tập đạt chuẩn giáo dục Anh Quốc với lịch trình hoàn toàn chủ động và cá nhân hóa.' : 'Study under UK education standards with personalized scheduling.' },
+        { title: isVi ? 'Sinh viên' : 'Students', description: isVi ? 'Mong muốn sở hữu bằng cấp quốc tế được công nhận rộng rãi để khởi đầu sự nghiệp thuận lợi.' : 'Seeking globally recognized UK diplomas for a career headstart.' },
+        { title: isVi ? 'Người đi làm' : 'Working Professionals', description: isVi ? 'Cần nâng cao trình độ chuyên môn và kỹ năng thực tiễn mà không phải tạm dừng công việc.' : 'Upgrading professional skills without interrupting current jobs.' },
+        { title: isVi ? 'Chủ doanh nghiệp' : 'Business Owners', description: isVi ? 'Phát triển năng lực quản lý và tư duy chiến lược để dẫn dắt doanh nghiệp vươn xa.' : 'Building strategic leadership to expand business growth.' },
+        { title: isVi ? 'Người có kế hoạch du học' : 'Study Abroad Candidates', description: isVi ? 'Chuẩn bị nền tảng vững chắc để chuyển tiếp lên các chương trình tại Anh và quốc tế.' : 'Building a solid foundation for UK degree top-up.' },
+        { title: isVi ? 'Người cần linh hoạt' : 'Flexible Learners', description: isVi ? 'Học tập đạt chuẩn giáo dục Anh Quốc với lịch trình hoàn toàn chủ động và cá nhân hóa.' : 'Study under UK education standards with personalized scheduling.' },
       ],
     },
     benefitsSection: {
@@ -734,11 +734,11 @@ const wolverhamptonData = (lang: 'vi' | 'en') => {
     targetAudienceSection: {
       title: isVi ? 'Đối tượng phù hợp' : 'Target Audience',
       items: [
-        { icon: 'GraduationCap', title: isVi ? 'Người đã tốt nghiệp đại học' : 'University Graduates', description: isVi ? 'Mong muốn nâng cao trình độ với bằng cấp chính quy từ trường đại học công lập Anh Quốc.' : 'Seeking official postgraduate degrees from UK public university.' },
-        { icon: 'Building2', title: isVi ? 'Nhà quản lý & Lãnh đạo' : 'Managers & Leaders', description: isVi ? 'Phát triển năng lực quản trị và tư tư duy chiến lược để dẫn dắt tổ chức trong môi trường toàn cầu.' : 'Building executive leadership and global strategic thinking.' },
-        { icon: 'Briefcase', title: isVi ? 'Người đi làm' : 'Working Professionals', description: isVi ? 'Cần bằng cấp quốc tế để thăng tiến sự nghiệp mà không phải tạm dừng công việc hiện tại.' : 'Requiring UK degrees for promotion without stopping work.' },
-        { icon: 'Globe', title: isVi ? 'Học viên hướng quốc tế' : 'Globally Oriented Learners', description: isVi ? 'Có kế hoạch làm việc hoặc học tập trong môi trường đa quốc gia, cần bằng cấp được công nhận rộng rãi.' : 'Aiming for multinational corporate roles.' },
-        { icon: 'Clock', title: isVi ? 'Người cần linh hoạt' : 'Flexible Learners', description: isVi ? 'Chương trình học trực tuyến đảm bảo chất lượng giáo dục Anh Quốc với lịch trình cá nhân hóa.' : 'Studying under UK quality framework with personalized pacing.' },
+        { title: isVi ? 'Người đã tốt nghiệp đại học' : 'University Graduates', description: isVi ? 'Mong muốn nâng cao trình độ với bằng cấp chính quy từ trường đại học công lập Anh Quốc.' : 'Seeking official postgraduate degrees from UK public university.' },
+        { title: isVi ? 'Nhà quản lý & Lãnh đạo' : 'Managers & Leaders', description: isVi ? 'Phát triển năng lực quản trị và tư tư duy chiến lược để dẫn dắt tổ chức trong môi trường toàn cầu.' : 'Building executive leadership and global strategic thinking.' },
+        { title: isVi ? 'Người đi làm' : 'Working Professionals', description: isVi ? 'Cần bằng cấp quốc tế để thăng tiến sự nghiệp mà không phải tạm dừng công việc hiện tại.' : 'Requiring UK degrees for promotion without stopping work.' },
+        { title: isVi ? 'Học viên hướng quốc tế' : 'Globally Oriented Learners', description: isVi ? 'Có kế hoạch làm việc hoặc học tập trong môi trường đa quốc gia, cần bằng cấp được công nhận rộng rãi.' : 'Aiming for multinational corporate roles.' },
+        { title: isVi ? 'Người cần linh hoạt' : 'Flexible Learners', description: isVi ? 'Chương trình học trực tuyến đảm bảo chất lượng giáo dục Anh Quốc với lịch trình cá nhân hóa.' : 'Studying under UK quality framework with personalized pacing.' },
       ],
     },
     benefitsSection: {

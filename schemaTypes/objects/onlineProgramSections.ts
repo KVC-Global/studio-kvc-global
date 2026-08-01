@@ -140,17 +140,16 @@ export const onlineProgramAudienceOssd = defineType({
   ],
 })
 
-// Target audience for OTHM/Qualifi/Wolverhampton (with description)
+// Target audience for OTHM/Qualifi/Wolverhampton (title + description, no icon)
 const audienceCard = defineType({
   name: 'onlineProgramAudienceCard',
   title: 'Audience card',
   type: 'object',
   fields: [
-    string('icon', 'Icon name (lucide)'),
     string('title', 'Title'),
     text('description', 'Description'),
   ],
-  preview: {select: {title: 'title', subtitle: 'icon'}},
+  preview: {select: {title: 'title', subtitle: 'description'}},
 })
 
 export const onlineProgramAudience = defineType({
