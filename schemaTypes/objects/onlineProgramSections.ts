@@ -12,11 +12,11 @@ export const onlineProgramHero = defineType({
   type: 'object',
   fields: [
     string('parentBreadcrumb', 'Parent breadcrumb (e.g. Khóa Học Online)'),
+    string('breadcrumb', 'Breadcrumb text (current page)'),
     string('tagline', 'Tagline'),
     string('title', 'Title'),
     string('subtitle', 'Subtitle'),
     text('description', 'Description (second paragraph)'),
-    string('breadcrumb', 'Breadcrumb text (current page)'),
     string('primaryButtonLabel', 'Button label'),
     string('primaryButtonHref', 'Button href'),
     image('backgroundImage', 'Hero background image'),

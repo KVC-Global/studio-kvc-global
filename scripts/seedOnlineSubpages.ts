@@ -51,6 +51,7 @@ const ossdData = (lang: 'vi' | 'en') => {
     language: lang,
     heroSection: {
       parentBreadcrumb: isVi ? 'Khóa Học Online' : 'Online Courses',
+      breadcrumb: isVi ? 'OSSD Canada' : 'OSSD Canada',
       tagline: 'OSSD CANADA',
       title: isVi
         ? 'Bằng Tốt nghiệp Trung học Phổ thông Ontario'
@@ -245,6 +246,7 @@ const othmData = (lang: 'vi' | 'en') => {
     language: lang,
     heroSection: {
       parentBreadcrumb: isVi ? 'Khóa Học Online' : 'Online Courses',
+      breadcrumb: isVi ? 'OTHM Anh Quốc' : 'OTHM UK',
       tagline: 'OTHM ANH QUỐC',
       title: isVi
         ? 'Học Chứng chỉ OTHM Anh Quốc trực tuyến cùng KVC Global'
@@ -441,6 +443,7 @@ const qualifiData = (lang: 'vi' | 'en') => {
     language: lang,
     heroSection: {
       parentBreadcrumb: isVi ? 'Khóa Học Online' : 'Online Courses',
+      breadcrumb: isVi ? 'QUALIFI Anh Quốc' : 'QUALIFI UK',
       tagline: 'QUALIFI ANH QUỐC',
       title: isVi
         ? 'Học Chứng chỉ QUALIFI Anh Quốc trực tuyến cùng KVC Global'
@@ -630,6 +633,7 @@ const wolverhamptonData = (lang: 'vi' | 'en') => {
     language: lang,
     heroSection: {
       parentBreadcrumb: isVi ? 'Khóa Học Online' : 'Online Courses',
+      breadcrumb: isVi ? 'University of Wolverhampton' : 'University of Wolverhampton',
       tagline: 'UNIVERSITY OF WOLVERHAMPTON',
       title: isVi
         ? 'Học Đại học và Thạc sĩ Anh Quốc 100% Online cùng University of Wolverhampton'
