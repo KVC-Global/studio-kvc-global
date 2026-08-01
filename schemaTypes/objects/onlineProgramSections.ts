@@ -126,6 +126,7 @@ const audienceCard = defineType({
   fields: [
     string('icon', 'Icon name (lucide)'),
     string('title', 'Title'),
+    text('description', 'Description'),
   ],
   preview: {select: {title: 'title', subtitle: 'icon'}},
 })
