@@ -413,7 +413,7 @@ const othmData = (lang: 'vi' | 'en') => {
         },
       ],
     },
-    processSection: {
+    stepsSection: {
       title: isVi ? 'Quy trình đăng ký' : 'Enrollment Process',
       steps: [
         { title: isVi ? 'Đăng ký tư vấn' : 'Register Consultation', description: isVi ? 'Liên hệ với KVC Global để được tư vấn chi tiết về chương trình OTHM và lộ trình phù hợp.' : 'Contact KVC Global for advice on OTHM levels and custom pathways.' },
@@ -602,7 +602,7 @@ const qualifiData = (lang: 'vi' | 'en') => {
         },
       ],
     },
-    processSection: {
+    stepsSection: {
       title: isVi ? 'Quy trình đăng ký' : 'Enrollment Process',
       steps: [
         { title: isVi ? 'Đăng ký tư vấn' : 'Register Consultation', description: isVi ? 'Liên hệ với KVC Global để được tư vấn chi tiết về chương trình QUALIFI và định hướng học tập.' : 'Contact KVC Global for detailed advice on QUALIFI pathways.' },
@@ -766,7 +766,7 @@ const wolverhamptonData = (lang: 'vi' | 'en') => {
         },
       ],
     },
-    processSection: {
+    stepsSection: {
       title: isVi ? 'Quy trình đăng ký' : 'Enrollment Process',
       steps: [
         { title: isVi ? 'Đăng ký tư vấn' : 'Register Consultation', description: isVi ? 'Liên hệ với KVC Global để được tư vấn chi tiết về chương trình của University of Wolverhampton.' : 'Contact KVC Global for detailed advice on Wolverhampton degrees.' },
