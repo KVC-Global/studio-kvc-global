@@ -11,6 +11,10 @@ const allStructuredDocumentTypes = new Set([
   'contactPage',
   'dichVuPage',
   'onlineProgramPage',
+  'onlineOssdPage',
+  'onlineOthmPage',
+  'onlineQualifiPage',
+  'onlineWolverhamptonPage',
   ...sharedDocumentTypes,
 ])
 

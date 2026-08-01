@@ -9,17 +9,18 @@
     "deploy": "sanity deploy",
     "deploy-graphql": "sanity graphql deploy",
     "dev": "sanity dev",
-    "start": "sanity start"
+    "start": "sanity start",
+    "seed-subpages": "tsx scripts/seedOnlineSubpages.ts"
   },
   "keywords": [
     "sanity"
   ],
   "dependencies": {
     "@sanity/document-internationalization": "^6.2.21",
-    "@sanity/vision": "^6.7.0",
+    "@sanity/vision": "^6.8.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "sanity": "^6.7.0",
+    "sanity": "^6.8.0",
     "styled-components": "^6.1.18"
   },
   "devDependencies": {

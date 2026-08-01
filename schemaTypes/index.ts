@@ -4,6 +4,10 @@ import {dichVuPage} from './documents/dichVuPage'
 import {faq} from './documents/faq'
 import {homePage} from './documents/homePage'
 import {onlineProgramPage} from './documents/onlineProgramPage'
+import {onlineOssdPage} from './documents/onlineOssdPage'
+import {onlineOthmPage} from './documents/onlineOthmPage'
+import {onlineQualifiPage} from './documents/onlineQualifiPage'
+import {onlineWolverhamptonPage} from './documents/onlineWolverhamptonPage'
 import {partner} from './documents/partner'
 import {service} from './documents/service'
 import {testimonial} from './documents/testimonial'
@@ -18,6 +22,10 @@ export const schemaTypes = [
   contactPage,
   dichVuPage,
   onlineProgramPage,
+  onlineOssdPage,
+  onlineOthmPage,
+  onlineQualifiPage,
+  onlineWolverhamptonPage,
   ...homepageObjects,
   ...onlineProgramObjects,
   ...pageObjects,
@@ -27,3 +35,4 @@ export const schemaTypes = [
   service,
   faq,
 ]
+

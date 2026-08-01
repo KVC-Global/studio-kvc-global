@@ -1,27 +1,51 @@
 import type {StructureBuilder} from 'sanity/structure'
 
-const SLUGS = [
-  {slug: 'ossd', vi: 'OSSD Ontario — Tiếng Việt', en: 'OSSD Ontario — English'},
-  {slug: 'othm', vi: 'OTHM — Tiếng Việt', en: 'OTHM — English'},
-  {slug: 'wolverhampton', vi: 'Wolverhampton — Tiếng Việt', en: 'Wolverhampton — English'},
-  {slug: 'qualifi', vi: 'Qualifi — Tiếng Việt', en: 'Qualifi — English'},
+const SUBPAGES = [
+  {
+    id: 'ossd',
+    schemaType: 'onlineOssdPage',
+    title: 'OSSD Ontario',
+    vi: 'OSSD Ontario — Tiếng Việt',
+    en: 'OSSD Ontario — English',
+  },
+  {
+    id: 'othm',
+    schemaType: 'onlineOthmPage',
+    title: 'OTHM Qualifications',
+    vi: 'OTHM — Tiếng Việt',
+    en: 'OTHM — English',
+  },
+  {
+    id: 'qualifi',
+    schemaType: 'onlineQualifiPage',
+    title: 'QUALIFI Qualifications',
+    vi: 'Qualifi — Tiếng Việt',
+    en: 'Qualifi — English',
+  },
+  {
+    id: 'wolverhampton',
+    schemaType: 'onlineWolverhamptonPage',
+    title: 'University of Wolverhampton',
+    vi: 'Wolverhampton — Tiếng Việt',
+    en: 'Wolverhampton — English',
+  },
 ]
 
 const localizedDocument = (
   S: StructureBuilder,
-  slug: string,
-  language: 'vi' | 'en',
+  schemaType: string,
+  docId: string,
   title: string,
 ) =>
   S.listItem()
-    .id(`online-program-${slug}-${language}`)
+    .id(docId)
     .title(title)
     .child(
       S.document()
-        .id(`online-program-${slug}-${language}`)
+        .id(docId)
         .title(title)
-        .schemaType('onlineProgramPage')
-        .documentId(`online-program-${slug}-${language}`),
+        .schemaType(schemaType)
+        .documentId(docId),
     )
 
 export const onlineProgramsStructure = (S: StructureBuilder) =>
@@ -32,9 +56,18 @@ export const onlineProgramsStructure = (S: StructureBuilder) =>
       S.list()
         .title('Khóa học Online (Subpages)')
         .items(
-          SLUGS.flatMap(({slug, vi, en}) => [
-            localizedDocument(S, slug, 'vi', vi),
-            localizedDocument(S, slug, 'en', en),
-          ]),
+          SUBPAGES.map(({id, schemaType, title, vi, en}) =>
+            S.listItem()
+              .id(`subpage-${id}`)
+              .title(title)
+              .child(
+                S.list()
+                  .title(title)
+                  .items([
+                    localizedDocument(S, schemaType, `online-${id}-vi`, vi),
+                    localizedDocument(S, schemaType, `online-${id}-en`, en),
+                  ]),
+              ),
+          ),
         ),
     )

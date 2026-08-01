@@ -26,6 +26,10 @@ export default defineConfig({
         'contactPage',
         'dichVuPage',
         'onlineProgramPage',
+        'onlineOssdPage',
+        'onlineOthmPage',
+        'onlineQualifiPage',
+        'onlineWolverhamptonPage',
         'service',
         'partner',
         'testimonial',
@@ -38,13 +42,17 @@ export default defineConfig({
     types: schemaTypes,
     templates: (templates) => [
       ...templates.filter(
-        (template) => !['homePage', 'aboutPage', 'contactPage', 'dichVuPage'].includes(template.schemaType),
+        (template) => !['homePage', 'aboutPage', 'contactPage', 'dichVuPage', 'onlineProgramPage', 'onlineOssdPage', 'onlineOthmPage', 'onlineQualifiPage', 'onlineWolverhamptonPage'].includes(template.schemaType),
       ),
       ...[
         ['home-page', 'homePage', 'Trang chủ', 'Homepage'],
         ['about-page', 'aboutPage', 'Giới thiệu', 'About'],
         ['contact-page', 'contactPage', 'Liên hệ', 'Contact'],
         ['dich-vu', 'dichVuPage', 'Dịch vụ', 'Services'],
+        ['online-ossd', 'onlineOssdPage', 'OSSD Ontario', 'OSSD Ontario'],
+        ['online-othm', 'onlineOthmPage', 'OTHM Qualifications', 'OTHM Qualifications'],
+        ['online-qualifi', 'onlineQualifiPage', 'QUALIFI Qualifications', 'QUALIFI Qualifications'],
+        ['online-wolverhampton', 'onlineWolverhamptonPage', 'University of Wolverhampton', 'University of Wolverhampton'],
       ].flatMap(([id, schemaType, viTitle, enTitle]) => [
         {
           id: `${id}-vi`,

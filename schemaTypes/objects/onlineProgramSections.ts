@@ -2,7 +2,8 @@ import {defineArrayMember, defineField, defineType} from 'sanity'
 
 const string = (name: string, title: string) => defineField({name, title, type: 'string'})
 const text = (name: string, title: string) => defineField({name, title, type: 'text', rows: 4})
-const url = (name: string, title: string) => defineField({name, title, type: 'url'})
+const image = (name: string, title: string) =>
+  defineField({name, title, type: 'image', options: {hotspot: true}})
 
 // Hero
 export const onlineProgramHero = defineType({
@@ -18,7 +19,7 @@ export const onlineProgramHero = defineType({
     string('breadcrumb', 'Breadcrumb text (current page)'),
     string('primaryButtonLabel', 'Button label'),
     string('primaryButtonHref', 'Button href'),
-    url('backgroundImage', 'Hero background image URL'),
+    image('backgroundImage', 'Hero background image'),
   ],
 })
 
@@ -31,7 +32,7 @@ export const onlineProgramIntro = defineType({
     string('title', 'Title'),
     defineField({name: 'paragraphs', title: 'Paragraphs', type: 'array', of: [defineArrayMember({type: 'text'})]}),
     defineField({name: 'highlights', title: 'Highlights', type: 'array', of: [defineArrayMember({type: 'string'})]}),
-    url('image', 'Intro image URL'),
+    image('image', 'Intro image'),
     string('imageAlt', 'Intro image alt'),
   ],
 })
@@ -98,7 +99,6 @@ export const onlineProgramFormat = defineType({
   fields: [
     string('title', 'Title'),
     defineField({name: 'items', title: 'Format items', type: 'array', of: [defineArrayMember({type: 'onlineProgramIconCard'})]}),
-    defineField({name: 'checklist', title: 'Format checklist (short bullets)', type: 'array', of: [defineArrayMember({type: 'string'})]}),
   ],
 })
 
@@ -113,19 +113,30 @@ export const onlineProgramProgression = defineType({
     defineField({name: 'tags', title: 'Level tags', type: 'array', of: [defineArrayMember({type: 'string'})]}),
     string('noteTitle', 'Highlight note title'),
     text('noteBody', 'Highlight note body'),
-    url('image', 'Image URL'),
+    image('image', 'Progression image'),
     string('imageAlt', 'Image alt'),
   ],
 })
 
-// Target audience (icon cards; plain bullets = title only)
+// Target audience (icon + title only, description removed)
+const audienceCard = defineType({
+  name: 'onlineProgramAudienceCard',
+  title: 'Audience card',
+  type: 'object',
+  fields: [
+    string('icon', 'Icon name (lucide)'),
+    string('title', 'Title'),
+  ],
+  preview: {select: {title: 'title', subtitle: 'icon'}},
+})
+
 export const onlineProgramAudience = defineType({
   name: 'onlineProgramAudience',
   title: 'Target audience',
   type: 'object',
   fields: [
     string('title', 'Title'),
-    defineField({name: 'items', title: 'Audience', type: 'array', of: [defineArrayMember({type: 'onlineProgramIconCard'})]}),
+    defineField({name: 'items', title: 'Audience', type: 'array', of: [defineArrayMember({type: 'onlineProgramAudienceCard'})]}),
   ],
 })
 
@@ -137,7 +148,7 @@ const benefitCard = defineType({
   fields: [
     string('title', 'Title'),
     text('description', 'Description'),
-    url('image', 'Image URL'),
+    image('image', 'Benefit image'),
   ],
   preview: {select: {title: 'title'}},
 })
@@ -209,16 +220,53 @@ export const onlineProgramPrograms = defineType({
   ],
 })
 
+// OSSD Subjects Carousel
+const subjectItem = defineType({
+  name: 'onlineProgramSubject',
+  title: 'Subject item',
+  type: 'object',
+  fields: [
+    string('name', 'Subject name'),
+    image('image', 'Subject image'),
+  ],
+  preview: {select: {title: 'name'}},
+})
+
+export const onlineProgramSubjects = defineType({
+  name: 'onlineProgramSubjects',
+  title: 'Subjects carousel',
+  type: 'object',
+  fields: [
+    string('title', 'Title'),
+    defineField({name: 'items', title: 'Subjects', type: 'array', of: [defineArrayMember({type: 'onlineProgramSubject'})]}),
+  ],
+})
+
+// Parent reasons bullet section
+export const onlineProgramParentReasons = defineType({
+  name: 'onlineProgramParentReasons',
+  title: 'Parent reasons',
+  type: 'object',
+  fields: [
+    string('title', 'Title'),
+    defineField({name: 'items', title: 'Reasons', type: 'array', of: [defineArrayMember({type: 'string'})]}),
+  ],
+})
+
 export const onlineProgramObjects = [
   onlineProgramHero,
   onlineProgramIntro,
   structureItem,
   onlineProgramStructure,
+  subjectItem,
+  onlineProgramSubjects,
+  onlineProgramParentReasons,
   iconCard,
   onlineProgramWhy,
   onlineProgramSupport,
   onlineProgramFormat,
   onlineProgramProgression,
+  audienceCard,
   onlineProgramAudience,
   benefitCard,
   onlineProgramBenefits,
@@ -228,3 +276,4 @@ export const onlineProgramObjects = [
   programCard,
   onlineProgramPrograms,
 ]
+
