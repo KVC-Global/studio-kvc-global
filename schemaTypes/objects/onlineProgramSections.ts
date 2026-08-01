@@ -118,7 +118,29 @@ export const onlineProgramProgression = defineType({
   ],
 })
 
-// Target audience (icon + title only, description removed)
+// Target audience card for OSSD (icon + title only, no description)
+const audienceCardTitleOnly = defineType({
+  name: 'onlineProgramAudienceCardTitleOnly',
+  title: 'Audience card (Title only)',
+  type: 'object',
+  fields: [
+    string('icon', 'Icon name (lucide)'),
+    string('title', 'Title'),
+  ],
+  preview: {select: {title: 'title', subtitle: 'icon'}},
+})
+
+export const onlineProgramAudienceOssd = defineType({
+  name: 'onlineProgramAudienceOssd',
+  title: 'Target audience (OSSD)',
+  type: 'object',
+  fields: [
+    string('title', 'Title'),
+    defineField({name: 'items', title: 'Audience', type: 'array', of: [defineArrayMember({type: 'onlineProgramAudienceCardTitleOnly'})]}),
+  ],
+})
+
+// Target audience for OTHM/Qualifi/Wolverhampton (with description)
 const audienceCard = defineType({
   name: 'onlineProgramAudienceCard',
   title: 'Audience card',
@@ -267,6 +289,8 @@ export const onlineProgramObjects = [
   onlineProgramSupport,
   onlineProgramFormat,
   onlineProgramProgression,
+  audienceCardTitleOnly,
+  onlineProgramAudienceOssd,
   audienceCard,
   onlineProgramAudience,
   benefitCard,

@@ -17,7 +17,7 @@ export const onlineOssdPage = defineType({
     defineField({name: 'whySection', title: 'Why choose section', type: 'onlineProgramWhy', group: 'content'}),
     defineField({name: 'structureSection', title: 'Structure section (Cấu trúc 30 tín chỉ)', type: 'onlineProgramStructure', group: 'content'}),
     defineField({name: 'subjectsSection', title: 'Subjects carousel', type: 'onlineProgramSubjects', group: 'content'}),
-    defineField({name: 'targetAudienceSection', title: 'Target audience', type: 'onlineProgramAudience', group: 'content'}),
+    defineField({name: 'targetAudienceSection', title: 'Target audience', type: 'onlineProgramAudienceOssd', group: 'content'}),
     defineField({name: 'learningFormatsSection', title: 'Learning formats (Hình thức học)', type: 'onlineProgramFormat', group: 'content'}),
     defineField({name: 'benefitsSection', title: 'Benefits section (Lợi ích khi học OSSD)', type: 'onlineProgramBenefits', group: 'content'}),
     defineField({name: 'stepsSection', title: 'Steps section (Quy trình nhập học)', type: 'onlineProgramProcess', group: 'content'}),
