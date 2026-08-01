@@ -38,7 +38,6 @@ const ossdData = (lang: 'vi' | 'en') => {
         : 'KVC Global provides the OSSD program with flexible learning, helping students build a strong academic profile and gain competitive advantages for global university admission.',
       primaryButtonLabel: isVi ? 'Đăng ký tư vấn miễn phí' : 'Book a Free Consultation',
       primaryButtonHref: '#dang-ky',
-      backgroundImage: '/images/study-abroad-hero.jpg',
     },
     introSection: {
       title: isVi ? 'OSSD là gì?' : 'What is OSSD?',
@@ -57,7 +56,6 @@ const ossdData = (lang: 'vi' | 'en') => {
         isVi ? 'Hoạt động ngoại khóa và trách nhiệm cộng đồng.' : 'Extracurriculars and community involvement.',
         isVi ? 'Chuẩn bị sẵn sàng cho môi trường đại học quốc tế.' : 'Readiness for top international universities.',
       ],
-      image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80&auto=format&fit=crop',
       imageAlt: 'OSSD Ontario Program',
     },
     whySection: {
@@ -128,19 +126,19 @@ const ossdData = (lang: 'vi' | 'en') => {
     subjectsSection: {
       title: isVi ? 'Các môn học' : 'Subjects Offered',
       items: [
-        { name: 'English', image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&q=80&auto=format&fit=crop' },
-        { name: 'Mathematics', image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&q=80&auto=format&fit=crop' },
-        { name: 'Science', image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&q=80&auto=format&fit=crop' },
-        { name: 'Business Studies', image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=80&auto=format&fit=crop' },
-        { name: 'Computer Science', image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80&auto=format&fit=crop' },
-        { name: 'Social Sciences', image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80&auto=format&fit=crop' },
-        { name: 'Canadian & World Studies', image: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=600&q=80&auto=format&fit=crop' },
-        { name: 'Arts', image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80&auto=format&fit=crop' },
-        { name: 'Health & Physical Education', image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80&auto=format&fit=crop' },
-        { name: 'Technology', image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80&auto=format&fit=crop' },
-        { name: 'French', image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80&auto=format&fit=crop' },
-        { name: 'Economics', image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=80&auto=format&fit=crop' },
-        { name: 'Accounting', image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80&auto=format&fit=crop' },
+        { name: 'English' },
+        { name: 'Mathematics' },
+        { name: 'Science' },
+        { name: 'Business Studies' },
+        { name: 'Computer Science' },
+        { name: 'Social Sciences' },
+        { name: 'Canadian & World Studies' },
+        { name: 'Arts' },
+        { name: 'Health & Physical Education' },
+        { name: 'Technology' },
+        { name: 'French' },
+        { name: 'Economics' },
+        { name: 'Accounting' },
       ],
     },
     targetAudienceSection: {
@@ -159,22 +157,18 @@ const ossdData = (lang: 'vi' | 'en') => {
         {
           title: isVi ? 'Tư vấn lộ trình cá nhân' : 'Personalized Pathway Counseling',
           description: isVi ? 'Đội ngũ chuyên gia hỗ trợ xây dựng kế hoạch học tập phù hợp với năng lực và mục tiêu của từng học sinh.' : 'Experts assist in creating study plans tailored to each student capability and goal.',
-          image: 'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=600&q=80&auto=format&fit=crop',
         },
         {
           title: isVi ? 'Hỗ trợ chọn môn' : 'Course Selection Support',
           description: isVi ? 'Tư vấn lựa chọn môn học phù hợp với ngành học tương lai, điều kiện xét tuyển đại học, khả năng học tập.' : 'Guidance on choosing courses suitable for future majors, university admission criteria, and academic capacity.',
-          image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80&auto=format&fit=crop',
         },
         {
           title: isVi ? 'Đồng hành xuyên suốt' : 'Continuous Guidance',
           description: isVi ? 'Theo dõi tiến độ học tập, hỗ trợ hồ sơ, tư vấn hoạt động ngoại khóa, chuẩn bị hồ sơ đại học.' : 'Track progress, support portfolios, advise on extracurriculars, and prepare university applications.',
-          image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80&auto=format&fit=crop',
         },
         {
           title: isVi ? 'Mở rộng cơ hội quốc tế' : 'Expand Global Opportunities',
           description: isVi ? 'OSSD giúp học sinh xây dựng nền tảng để ứng tuyển vào nhiều trường đại học tại Canada và các quốc gia khác.' : 'OSSD builds a strong foundation for applying to universities in Canada and worldwide.',
-          image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80&auto=format&fit=crop',
         },
       ],
     },
@@ -238,7 +232,6 @@ const othmData = (lang: 'vi' | 'en') => {
         : 'KVC Global provides OTHM Qualifications 100% Online, suitable for students, working professionals, and managers seeking UK education standards.',
       primaryButtonLabel: isVi ? 'Đăng ký tư vấn miễn phí' : 'Book a Free Consultation',
       primaryButtonHref: '/lien-he',
-      backgroundImage: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80&auto=format&fit=crop',
     },
     introSection: {
       title: isVi ? 'OTHM là gì?' : 'What is OTHM?',
@@ -258,7 +251,6 @@ const othmData = (lang: 'vi' | 'en') => {
         isVi ? 'Mở rộng cơ hội thăng tiến nghề nghiệp.' : 'Expand career advancement opportunities.',
         isVi ? 'Dễ dàng chuyển tiếp lên Đại học và Thạc sĩ.' : 'Seamless top-up progression to Bachelor & Master degrees.',
       ],
-      image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80&auto=format&fit=crop',
       imageAlt: 'OTHM Qualifications',
     },
     whySection: {
@@ -373,32 +365,26 @@ const othmData = (lang: 'vi' | 'en') => {
         {
           title: isVi ? 'Chứng chỉ chuẩn Anh Quốc' : 'UK Accredited Diploma',
           description: isVi ? 'Văn bằng được Ofqual công nhận, có giá trị quốc tế, mở ra cơ hội học tập và làm việc toàn cầu.' : 'Ofqual-regulated qualification recognized globally for work and study.',
-          image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80&auto=format&fit=crop',
         },
         {
           title: isVi ? 'Học trực tuyến linh hoạt' : 'Flexible Online Study',
           description: isVi ? 'Chủ động thời gian, học mọi lúc mọi nơi, phù hợp với người đi làm và sinh viên bận rộn.' : 'Learn anytime anywhere, matching busy work and study schedules.',
-          image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80&auto=format&fit=crop',
         },
         {
           title: isVi ? 'Nâng cao kỹ năng chuyên môn' : 'Professional Skill Advancement',
           description: isVi ? 'Phát triển năng lực quản lý và kỹ năng thực tiễn, đáp ứng yêu cầu của thị trường lao động quốc tế.' : 'Develop practical management capabilities matching international job demands.',
-          image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80&auto=format&fit=crop',
         },
         {
           title: isVi ? 'Tiết kiệm chi phí' : 'Cost Savings',
           description: isVi ? 'Chi phí tối ưu hơn nhiều so với du học truyền thống nhưng vẫn đạt bằng cấp theo tiêu chuẩn Anh Quốc.' : 'Highly cost-effective compared to studying abroad on campus.',
-          image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80&auto=format&fit=crop',
         },
         {
           title: isVi ? 'Cơ hội nghề nghiệp quốc tế' : 'Global Career Opportunities',
           description: isVi ? 'Mở rộng cánh cửa làm việc trong môi trường đa quốc gia với bằng cấp được công nhận rộng rãi.' : 'Open doors to multinational corporate environments.',
-          image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80&auto=format&fit=crop',
         },
         {
           title: isVi ? 'Lộ trình chuyển tiếp rõ ràng' : 'Clear Top-Up Pathway',
           description: isVi ? 'Chuyển tiếp lên Đại học và Thạc sĩ tại nhiều trường đối tác Anh Quốc và quốc tế.' : 'Direct top-up entry into UK partner Bachelor and Master degrees.',
-          image: 'https://images.unsplash.com/photo-1523050854058-8df90109c73f?w=600&q=80&auto=format&fit=crop',
         },
       ],
     },
@@ -442,7 +428,6 @@ const qualifiData = (lang: 'vi' | 'en') => {
         : 'KVC Global provides QUALIFI programs 100% Online for flexible, affordable learning with UK university progression.',
       primaryButtonLabel: isVi ? 'Đăng ký tư vấn miễn phí' : 'Book a Free Consultation',
       primaryButtonHref: '/lien-he',
-      backgroundImage: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1920&q=80&auto=format&fit=crop',
     },
     introSection: {
       title: isVi ? 'QUALIFI là gì?' : 'What is QUALIFI?',
@@ -459,7 +444,6 @@ const qualifiData = (lang: 'vi' | 'en') => {
         isVi ? 'Học trực tuyến linh hoạt 100%.' : '100% flexible online study.',
         isVi ? 'Lộ trình chuyển tiếp Cử nhân và Thạc sĩ.' : 'Bachelor & Master top-up progression.',
       ],
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80&auto=format&fit=crop',
       imageAlt: 'QUALIFI Qualifications',
     },
     whySection: {
@@ -495,7 +479,6 @@ const qualifiData = (lang: 'vi' | 'en') => {
       tags: ['Level 4 & 5 -> Year 3 Bachelor Top-up', 'Level 7 -> MBA / MSc Dissertation Top-up'],
       noteTitle: isVi ? 'Tiết kiệm chi phí tối đa' : 'Maximum Cost Savings',
       noteBody: isVi ? 'Hình thức chuyển tiếp giúp học viên tiết kiệm tới 70% chi phí so với du học toàn thời gian tại Anh Quốc.' : 'The Top-up progression pathway saves up to 70% compared to full-time UK studying abroad.',
-      image: 'https://images.unsplash.com/photo-1523050854058-8df90109c73f?w=600&q=80&auto=format&fit=crop',
       imageAlt: 'QUALIFI University Progression',
     },
     programsSection: {
@@ -571,32 +554,26 @@ const qualifiData = (lang: 'vi' | 'en') => {
         {
           title: isVi ? 'Chứng chỉ chuẩn Anh Quốc' : 'UK Standard Diploma',
           description: isVi ? 'Văn bằng được Ofqual công nhận và quản lý, đảm bảo chất lượng theo khung trình độ Anh Quốc (RQF).' : 'Ofqual-regulated qualification ensuring UK RQF framework quality.',
-          image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80&auto=format&fit=crop',
         },
         {
           title: isVi ? 'Học tập linh hoạt' : 'Flexible Learning',
           description: isVi ? 'Chủ động sắp xếp thời gian học, phù hợp với lịch trình cá nhân và công việc bận rộn.' : 'Schedule learning around personal and work routines.',
-          image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80&auto=format&fit=crop',
         },
         {
           title: isVi ? 'Phù hợp người đi làm' : 'Ideal for Professionals',
           description: isVi ? 'Thiết kế dành riêng cho người vừa học vừa làm, không cần đến lớp, không gián đoạn công việc.' : 'Tailored for working learners without job interruption.',
-          image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80&auto=format&fit=crop',
         },
         {
           title: isVi ? 'Tiết kiệm chi phí' : 'Cost Savings',
           description: isVi ? 'Chi phí hợp lý, tiết kiệm đáng kể so với du học trực tiếp nhưng vẫn sở hữu bằng cấp quốc tế.' : 'Reasonable costs with major savings over study abroad.',
-          image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80&auto=format&fit=crop',
         },
         {
           title: isVi ? 'Cơ hội nghề nghiệp rộng mở' : 'Broad Career Opportunities',
           description: isVi ? 'Nâng cao năng lực cạnh tranh, mở rộng cơ hội thăng tiến trong môi trường làm việc quốc tế.' : 'Enhance competitiveness for promotion in global firms.',
-          image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80&auto=format&fit=crop',
         },
         {
           title: isVi ? 'Lộ trình chuyển tiếp đại học' : 'University Top-Up Pathway',
           description: isVi ? 'Đủ điều kiện chuyển tiếp lên các chương trình Cử nhân và Thạc sĩ tại nhiều trường đối tác.' : 'Eligible for direct entry into Bachelor and Master top-ups.',
-          image: 'https://images.unsplash.com/photo-1523050854058-8df90109c73f?w=600&q=80&auto=format&fit=crop',
         },
       ],
     },
@@ -640,7 +617,6 @@ const wolverhamptonData = (lang: 'vi' | 'en') => {
         : 'KVC Global guides students through online Top-up and degree programs at Wolverhampton.',
       primaryButtonLabel: isVi ? 'Đăng ký tư vấn miễn phí' : 'Book a Free Consultation',
       primaryButtonHref: '/lien-he',
-      backgroundImage: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1920&q=80&auto=format&fit=crop',
     },
     introSection: {
       title: isVi ? 'Giới thiệu về University of Wolverhampton' : 'About University of Wolverhampton',
@@ -652,7 +628,6 @@ const wolverhamptonData = (lang: 'vi' | 'en') => {
           ? 'Chương trình trực tuyến của trường mang lại cơ hội sở hữu bằng cấp chính quy cho học viên trên toàn cầu mà không cần di chuyển hay tạm dừng công việc.'
           : 'Its online programs offer official UK degrees to global students without leaving home or work.',
       ],
-      image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=80&auto=format&fit=crop',
       imageAlt: 'University of Wolverhampton',
     },
     whySection: {
@@ -743,32 +718,26 @@ const wolverhamptonData = (lang: 'vi' | 'en') => {
         {
           title: isVi ? 'Bằng cấp chính quy trực tiếp' : 'Direct Official UK Degree',
           description: isVi ? 'Bằng được cấp trực tiếp bởi University of Wolverhampton, trường đại học công lập với hơn 190 năm lịch sử.' : 'Directly awarded by University of Wolverhampton with 190+ years of history.',
-          image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80&auto=format&fit=crop',
         },
         {
           title: isVi ? 'Chuẩn giáo dục Anh Quốc' : 'UK Quality Education',
           description: isVi ? 'Chương trình đào tạo bám sát khung tiêu chuẩn giáo dục Vương quốc Anh, được công nhận toàn cầu.' : 'Curriculum strictly adheres to UK quality standards recognized globally.',
-          image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80&auto=format&fit=crop',
         },
         {
           title: isVi ? 'Học tập linh hoạt' : 'Flexible Online Learning',
           description: isVi ? '100% trực tuyến, chủ động thời gian, không gián đoạn công việc hiện tại.' : '100% online, flexible scheduling, no career interruption.',
-          image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80&auto=format&fit=crop',
         },
         {
           title: isVi ? 'Phát triển năng lực toàn diện' : 'Holistic Capability Building',
           description: isVi ? 'Nâng cao kỹ năng quản lý, nghiên cứu và chuyên môn thông qua chương trình học ứng dụng thực tiễn.' : 'Enhance management, research, and practical expertise.',
-          image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80&auto=format&fit=crop',
         },
         {
           title: isVi ? 'Cơ hội thăng tiến quốc tế' : 'Global Career Advancement',
           description: isVi ? 'Gia tăng lợi thế cạnh tranh, mở rộng cơ hội làm việc trong môi trường đa quốc gia.' : 'Gain competitive advantages in multinational corporate settings.',
-          image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80&auto=format&fit=crop',
         },
         {
           title: isVi ? 'Tiết kiệm chi phí tối đa' : 'Maximum Financial Savings',
           description: isVi ? 'Tiết kiệm đáng kể so với du học toàn thời gian, không mất chi phí sinh hoạt tại nước ngoài.' : 'Save expenses compared to full-time UK living and studying on campus.',
-          image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80&auto=format&fit=crop',
         },
       ],
     },
