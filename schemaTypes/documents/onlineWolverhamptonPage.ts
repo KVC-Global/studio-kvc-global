@@ -16,11 +16,11 @@ export const onlineWolverhamptonPage = defineType({
     defineField({name: 'introSection', title: 'Intro section (Giới thiệu trường)', type: 'onlineProgramIntro', group: 'intro'}),
     defineField({name: 'whySection', title: 'Why choose Wolverhampton', type: 'onlineProgramWhy', group: 'content'}),
     defineField({name: 'kvcSupportSection', title: 'KVC Global Support (Hỗ trợ từ KVC)', type: 'onlineProgramSupport', group: 'content'}),
-    defineField({name: 'programsSection', title: 'Các chương trình đào tạo (Degree Programs Timeline)', type: 'onlineProgramPrograms', group: 'content'}),
     defineField({name: 'learningFormatsSection', title: 'Learning format', type: 'onlineProgramFormat', group: 'content'}),
     defineField({name: 'targetAudienceSection', title: 'Target audience', type: 'onlineProgramAudience', group: 'content'}),
     defineField({name: 'benefitsSection', title: 'Benefits section', type: 'onlineProgramBenefits', group: 'content'}),
     defineField({name: 'stepsSection', title: 'Steps section (Quy trình nhập học)', type: 'onlineProgramProcess', group: 'content'}),
+    defineField({name: 'programsSection', title: 'Các chương trình đào tạo (Degree Programs Timeline)', type: 'onlineProgramPrograms', group: 'content'}),
     defineField({name: 'seo', title: 'SEO', type: 'sharedSeo', group: 'seo'}),
   ],
   preview: {
