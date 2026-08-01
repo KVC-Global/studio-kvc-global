@@ -1,4 +1,5 @@
 import {createClient} from '@sanity/client'
+import {randomUUID} from 'crypto'
 
 const client = createClient({
   projectId: 'eh8b0fvx',
@@ -10,9 +11,33 @@ const client = createClient({
   useCdn: false,
 })
 
+const genKey = () => randomUUID().replace(/-/g, '').substring(0, 12)
+
+const ensureKeys = (obj: any): any => {
+  if (Array.isArray(obj)) {
+    return obj.map((item) => {
+      if (item && typeof item === 'object' && !Array.isArray(item)) {
+        return ensureKeys({
+          _key: item._key || genKey(),
+          ...item,
+        })
+      }
+      return item
+    })
+  } else if (obj && typeof obj === 'object') {
+    const res: any = {}
+    for (const k of Object.keys(obj)) {
+      res[k] = ensureKeys(obj[k])
+    }
+    return res
+  }
+  return obj
+}
+
 const createOrReplaceDoc = async (doc: any) => {
-  console.log(`Seeding document: ${doc._id}`)
-  await client.createOrReplace(doc)
+  const keyedDoc = ensureKeys(doc)
+  console.log(`Seeding document with keys: ${keyedDoc._id}`)
+  await client.createOrReplace(keyedDoc)
 }
 
 // --------------------------------------------------
@@ -759,7 +784,7 @@ const wolverhamptonData = (lang: 'vi' | 'en') => {
 }
 
 async function runSeed() {
-  console.log('--- Starting Complete Seeding for Khoá Học Online Subpages ---')
+  console.log('--- Starting Complete Seeding with Unique Array Item Keys ---')
   await createOrReplaceDoc(ossdData('vi'))
   await createOrReplaceDoc(ossdData('en'))
   await createOrReplaceDoc(othmData('vi'))
@@ -768,7 +793,7 @@ async function runSeed() {
   await createOrReplaceDoc(qualifiData('en'))
   await createOrReplaceDoc(wolverhamptonData('vi'))
   await createOrReplaceDoc(wolverhamptonData('en'))
-  console.log('--- Complete Seeding Finished Successfully! ---')
+  console.log('--- Seeding with Unique Keys Finished Successfully! ---')
 }
 
 runSeed().catch((err) => {
