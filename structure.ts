@@ -6,6 +6,8 @@ import {uniMasterStructure} from './structures/uniMasterStructure'
 import {privateStudyStructure} from './structures/privateStudyStructure'
 import {publicStudyStructure} from './structures/publicStudyStructure'
 import {aboutStructure, contactStructure} from './structures/pageStructure'
+import {dichVuStructure} from './structures/servicePageStructure'
+import {onlineProgramsStructure} from './structures/onlineProgramStructure'
 
 const sharedDocumentTypes = new Set([
   'service',
@@ -20,6 +22,12 @@ const allStructuredDocumentTypes = new Set([
   'homePage',
   'aboutPage',
   'contactPage',
+  'dichVuPage',
+  'onlineProgramPage',
+  'onlineOssdPage',
+  'onlineOthmPage',
+  'onlineQualifiPage',
+  'onlineWolverhamptonPage',
   'workPassPage',
   'studyAbroadPage',
   'uniMasterPage',
@@ -42,6 +50,8 @@ export const structure: StructureResolver = (S) =>
               homeStructure(S),
               aboutStructure(S),
               contactStructure(S),
+              dichVuStructure(S),
+              onlineProgramsStructure(S),
               S.divider(),
               workPassStructure(S),
               S.divider(),
