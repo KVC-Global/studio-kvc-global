@@ -199,6 +199,16 @@ export const studyAbroadTestimonials = defineType({
   fields: [
     string('title', 'Title'),
     defineField({
+      name: 'video',
+      title: 'Video file (MP4 recommended)',
+      type: 'file',
+      options: { accept: 'video/*' },
+      description:
+        'Upload a short clip (ideally ≤ 30s, portrait 9:16). Kept short for fast mobile loading.'
+    }),
+    string('videoTitle', 'Video caption / title'),
+    image('videoPoster', 'Poster image (shown before play)'),
+    defineField({
       name: 'testimonials',
       title: 'Testimonials list',
       type: 'array',
