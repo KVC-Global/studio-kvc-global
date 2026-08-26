@@ -67,18 +67,20 @@ export const dichVuIntro = defineType({
 
 export const dichVuVideoSection = defineType({
   name: 'dichVuVideoSection',
-  title: 'Video section',
+  title: 'Video',
   type: 'object',
   fields: [
-    string('eyebrow', 'Eyebrow'),
-    string('title', 'Title'),
+    string('videoTitle', 'Caption (shown over poster)'),
+    image('videoPoster', 'Poster image (shown before play)'),
     defineField({
       name: 'video',
-      title: 'Video File',
+      title: 'Video file (9:16 portrait, MP4, short)',
       type: 'file',
       options: {
         accept: 'video/*',
       },
+      description:
+        'Upload a vertical 9:16 clip (1080×1920, ≤ 60s, MP4/H.264).'
     }),
   ],
 })
