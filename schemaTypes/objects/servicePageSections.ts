@@ -63,6 +63,26 @@ export const dichVuIntro = defineType({
   ],
 })
 
+// --- Dich Vu Video ---
+
+export const dichVuVideoSection = defineType({
+  name: 'dichVuVideoSection',
+  title: 'Video section',
+  type: 'object',
+  fields: [
+    string('eyebrow', 'Eyebrow'),
+    string('title', 'Title'),
+    defineField({
+      name: 'video',
+      title: 'Video File',
+      type: 'file',
+      options: {
+        accept: 'video/*',
+      },
+    }),
+  ],
+})
+
 // --- Dich Vu Service Categories (section heading only — categories are rendered by the accordion) ---
 
 export const dichVuServiceCategories = defineType({
@@ -152,6 +172,7 @@ export const servicePageObjects = [
   dichVuHero,
   dichVuIntroPillar,
   dichVuIntro,
+  dichVuVideoSection,
   dichVuServiceCategories,
   // Dich Vu — service accordion (detailed breakdown)
   dichVuServiceChecklistGroup,

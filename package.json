@@ -23,6 +23,10 @@
     "sanity": "^6.9.2",
     "styled-components": "^6.1.18"
   },
+  "overrides": {
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^6.0.0",
     "@types/node": "^26.1.1",
