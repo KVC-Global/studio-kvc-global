@@ -1,4 +1,4 @@
-import type {StructureBuilder} from 'sanity/structure'
+import type { StructureBuilder } from 'sanity/structure'
 
 const studyAbroadDocument = (
   S: StructureBuilder,
@@ -20,12 +20,12 @@ const studyAbroadDocument = (
 export const studyAbroadStructure = (S: StructureBuilder) =>
   S.listItem()
     .id('study-abroad-page-parent')
-    .title('Trang Du học (Study Abroad Page)')
+    .title('Trang Du học Diploma (Study Abroad Page)')
     .child(
       S.list()
-        .title('Trang Du học (Study Abroad Page)')
+        .title('Trang Du học Diploma (Study Abroad Page)')
         .items([
-          studyAbroadDocument(S, 'vi', 'Trang Du học — Tiếng Việt'),
-          studyAbroadDocument(S, 'en', 'Study Abroad Page — English'),
+          studyAbroadDocument(S, 'vi', 'Trang Du học Diploma — Tiếng Việt'),
+          studyAbroadDocument(S, 'en', 'Study Abroad Diploma Page — English'),
         ]),
     )
