@@ -45,13 +45,13 @@ const privateStudyDocument = (
 export const privateStudyStructure = (S: StructureBuilder) =>
   S.listItem()
     .id('private-study-page-parent')
-    .title('Trang Du học Tư thục (Private Study Page)')
+    .title('Trang Du học Trường Quốc tế Singapore')
     .icon(BuildingIcon)
     .child(
       S.list()
-        .title('Trang Du học Tư thục (Private Study Page)')
+        .title('Trang Du học Trường Quốc tế Singapore')
         .items([
-          privateStudyDocument(S, 'vi', 'Trang Du học Tư thục — Tiếng Việt'),
-          privateStudyDocument(S, 'en', 'Private Study Page — English'),
+          privateStudyDocument(S, 'vi', 'Trang Du học Trường Quốc tế Singapore — Tiếng Việt'),
+          privateStudyDocument(S, 'en', 'Studying at Singapore International School — English'),
         ]),
     )
