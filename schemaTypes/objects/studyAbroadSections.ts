@@ -4,6 +4,26 @@ const text = (name: string, title: string) => defineField({ name, title, type: '
 const string = (name: string, title: string) => defineField({ name, title, type: 'string' })
 const image = (name: string, title: string) => defineField({ name, title, type: 'image', options: { hotspot: true } })
 
+const isSupportedVideoEmbedUrl = (value?: string) => {
+  if (!value) return true
+
+  try {
+    const url = new URL(value)
+    const isYouTubeEmbed =
+      ['www.youtube.com', 'www.youtube-nocookie.com'].includes(url.hostname) &&
+      url.pathname.startsWith('/embed/')
+    const isVimeoEmbed =
+      url.hostname === 'player.vimeo.com' && url.pathname.startsWith('/video/')
+    const isTikTokEmbed =
+      url.hostname === 'www.tiktok.com' &&
+      (url.pathname.startsWith('/embed/') || url.pathname.startsWith('/player/'))
+
+    return url.protocol === 'https:' && (isYouTubeEmbed || isVimeoEmbed || isTikTokEmbed)
+  } catch {
+    return false
+  }
+}
+
 const studyAbroadStat = defineType({
   name: 'studyAbroadStat',
   title: 'Stat item',
@@ -57,7 +77,22 @@ export const studyAbroadIntro = defineType({
       type: 'array',
       of: [defineArrayMember({ type: 'text' })]
     }),
-    image('image', 'Intro section image'),
+    defineField({
+      name: 'video',
+      title: 'Video file',
+      description: 'Upload a video file (e.g. MP4) in 9:16 portrait format.',
+      type: 'file',
+      options: { accept: 'video/*' }
+    }),
+    defineField({
+      name: 'videoUrl',
+      title: 'Video URL / Embed URL',
+      description: 'Or enter a direct video URL or YouTube/Vimeo/TikTok embed URL (9:16 frame).',
+      type: 'url'
+    }),
+    string('videoTitle', 'Video title / caption'),
+    image('videoPoster', 'Video poster image (9:16)'),
+    image('image', 'Intro section fallback image'),
     string('imageAlt', 'Image alt text')
   ]
 })
@@ -200,14 +235,25 @@ export const studyAbroadTestimonials = defineType({
     string('title', 'Title'),
     defineField({
       name: 'video',
-      title: 'Video file (MP4 recommended)',
+      title: 'Video file',
+      description: 'Upload a video file (e.g. MP4) in 9:16 portrait format.',
       type: 'file',
-      options: { accept: 'video/*' },
-      description:
-        'Upload a short clip (ideally ≤ 30s, portrait 9:16). Kept short for fast mobile loading.'
+      options: { accept: 'video/*' }
     }),
-    string('videoTitle', 'Video caption / title'),
-    image('videoPoster', 'Poster image (shown before play)'),
+    defineField({
+      name: 'videoEmbedUrl',
+      title: 'Vertical testimonial video embed URL',
+      description: 'Use an embeddable YouTube, Vimeo, or TikTok player URL. Displayed in a 9:16 frame.',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.uri({ allowRelative: false, scheme: ['https'] }).custom((value) =>
+          isSupportedVideoEmbedUrl(value)
+            ? true
+            : 'Use an HTTPS embed URL from YouTube, Vimeo, or TikTok.'
+        )
+    }),
+    string('videoTitle', 'Video title'),
+    image('videoPoster', 'Video poster image (9:16)'),
     defineField({
       name: 'testimonials',
       title: 'Testimonials list',
