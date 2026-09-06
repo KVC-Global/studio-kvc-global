@@ -26,6 +26,8 @@ import {privateStudyPage} from './documents/privateStudyPage'
 import {privateStudyObjects} from './objects/privateStudySections'
 import {publicStudyPage} from './documents/publicStudyPage'
 import {publicStudyObjects} from './objects/publicStudySections'
+import {malaysiaStudyPage} from './documents/malaysiaStudyPage'
+import {taiwanStudyPage} from './documents/taiwanStudyPage'
 import {siteSettings, siteSettingsObjects} from './documents/siteSettings'
 import {companyInfo, companyInfoObjects} from './documents/companyInfo'
 
@@ -53,6 +55,8 @@ export const schemaTypes = [
   ...privateStudyObjects,
   publicStudyPage,
   ...publicStudyObjects,
+  malaysiaStudyPage,
+  taiwanStudyPage,
   siteSettings,
   ...siteSettingsObjects,
   companyInfo,
