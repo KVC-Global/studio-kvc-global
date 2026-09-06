@@ -34,6 +34,8 @@ export default defineConfig({
         'uniMasterPage',
         'privateStudyPage',
         'publicStudyPage',
+        'malaysiaStudyPage',
+        'taiwanStudyPage',
         'aboutPage',
         'contactPage',
         'dichVuPage',
@@ -71,6 +73,8 @@ export default defineConfig({
             'uniMasterPage',
             'privateStudyPage',
             'publicStudyPage',
+            'malaysiaStudyPage',
+            'taiwanStudyPage',
             'siteSettings',
             'companyInfo',
           ].includes(template.schemaType),
@@ -89,6 +93,8 @@ export default defineConfig({
         ['uni-master-page', 'uniMasterPage', 'Trang Đại học & Thạc sĩ', 'University & Master Page'],
         ['private-study-page', 'privateStudyPage', 'Trang Du học Tư thục', 'Private Study Page'],
         ['public-study-page', 'publicStudyPage', 'Trang Du học Công lập', 'Public Study Page'],
+        ['malaysia-study-page', 'malaysiaStudyPage', 'Trang Du học Malaysia', 'Malaysia Study Page'],
+        ['taiwan-study-page', 'taiwanStudyPage', 'Trang Du học Đài Loan', 'Taiwan Study Page'],
         ['site-settings', 'siteSettings', 'Cài đặt website', 'Site Settings'],
       ].flatMap(([id, schemaType, viTitle, enTitle]) => [
         {

@@ -15,6 +15,8 @@ const destinations = [
   {title: 'University of Wolverhampton', value: 'wolverhampton'},
   {title: 'Enterprise Services', value: 'enterprise'},
   {title: 'Contact', value: 'contact'},
+  {title: 'Study in Malaysia', value: 'malaysiaStudy'},
+  {title: 'Study in Taiwan', value: 'taiwanStudy'},
   {title: 'Coming Soon', value: 'comingSoon'},
   {title: 'Custom link', value: 'custom'},
 ]

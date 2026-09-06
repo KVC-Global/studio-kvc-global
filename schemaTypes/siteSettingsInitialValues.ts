@@ -131,8 +131,8 @@ export function siteSettingsInitialValue(language: Language) {
     'uniMaster',
     'privateStudy',
     'publicStudy',
-    'comingSoon',
-    'comingSoon',
+    'malaysiaStudy',
+    'taiwanStudy',
   ]
   const courseDestinations = ['ossd', 'othm', 'qualifi', 'wolverhampton']
 
@@ -154,7 +154,7 @@ export function siteSettingsInitialValue(language: Language) {
               label,
               studyDestinations[index],
               t.studyDescriptions[index],
-              index >= 4,
+              false,
             ),
           ),
         ),

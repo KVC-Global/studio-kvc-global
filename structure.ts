@@ -5,6 +5,8 @@ import {studyAbroadStructure} from './structures/studyAbroadStructure'
 import {uniMasterStructure} from './structures/uniMasterStructure'
 import {privateStudyStructure} from './structures/privateStudyStructure'
 import {publicStudyStructure} from './structures/publicStudyStructure'
+import {malaysiaStudyStructure} from './structures/malaysiaStudyStructure'
+import {taiwanStudyStructure} from './structures/taiwanStudyStructure'
 import {aboutStructure, contactStructure} from './structures/pageStructure'
 import {dichVuStructure} from './structures/servicePageStructure'
 import {onlineProgramsStructure} from './structures/onlineProgramStructure'
@@ -33,6 +35,8 @@ const allStructuredDocumentTypes = new Set([
   'uniMasterPage',
   'privateStudyPage',
   'publicStudyPage',
+  'malaysiaStudyPage',
+  'taiwanStudyPage',
   ...sharedDocumentTypes,
 ])
 
@@ -59,6 +63,8 @@ export const structure: StructureResolver = (S) =>
               uniMasterStructure(S),
               privateStudyStructure(S),
               publicStudyStructure(S),
+              malaysiaStudyStructure(S),
+              taiwanStudyStructure(S),
             ]),
         ),
       S.listItem()
