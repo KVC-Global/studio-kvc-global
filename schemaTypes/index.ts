@@ -28,6 +28,7 @@ import {publicStudyPage} from './documents/publicStudyPage'
 import {publicStudyObjects} from './objects/publicStudySections'
 import {malaysiaStudyPage} from './documents/malaysiaStudyPage'
 import {taiwanStudyPage} from './documents/taiwanStudyPage'
+import {lead} from './documents/lead'
 import {siteSettings, siteSettingsObjects} from './documents/siteSettings'
 import {companyInfo, companyInfoObjects} from './documents/companyInfo'
 
@@ -65,5 +66,6 @@ export const schemaTypes = [
   partner,
   service,
   relatedService,
+  lead,
   faq,
 ]
