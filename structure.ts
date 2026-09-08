@@ -37,6 +37,7 @@ const allStructuredDocumentTypes = new Set([
   'publicStudyPage',
   'malaysiaStudyPage',
   'taiwanStudyPage',
+  'lead',
   ...sharedDocumentTypes,
 ])
 
@@ -123,6 +124,15 @@ export const structure: StructureResolver = (S) =>
               S.documentTypeListItem('testimonial').title('Testimonials'),
               S.documentTypeListItem('faq').title('FAQs'),
             ]),
+        ),
+      S.listItem()
+        .id('leads')
+        .title('Leads')
+        .child(
+          S.documentTypeList('lead')
+            .title('Leads')
+            .filter('_type == "lead"')
+            .defaultOrdering([{field: 'submittedAt', direction: 'desc'}]),
         ),
       S.divider(),
       ...S.documentTypeListItems().filter(
