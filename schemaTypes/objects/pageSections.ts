@@ -75,16 +75,6 @@ const aboutStat = defineType({
   fields: [string('icon', 'Icon name'), string('value', 'Value'), string('label', 'Label')],
 })
 
-const aboutValue = defineType({
-  name: 'aboutPageValue',
-  title: 'Core value',
-  type: 'object',
-  fields: [
-    string('icon', 'Icon name'),
-    string('title', 'Title'),
-    text('description', 'Description'),
-  ],
-})
 
 const aboutReview = defineType({
   name: 'aboutPageReview',
@@ -155,18 +145,18 @@ export const aboutPageStory = defineType({
 })
 export const aboutPageValues = defineType({
   name: 'aboutPageValues',
-  title: 'Core values',
+  title: 'Company story',
   type: 'object',
   fields: [
     string('eyebrow', 'Eyebrow'),
-    string('title', 'Title'),
-    text('description', 'Description'),
-    defineField({
-      name: 'items',
-      title: 'Values',
-      type: 'array',
-      of: [defineArrayMember({type: 'aboutPageValue'})],
-    }),
+    string('titleLine1', 'Title line 1'),
+    string('titleLine2', 'Title line 2 (accent)'),
+    text('paragraph1', 'Paragraph 1'),
+    text('paragraph2', 'Paragraph 2'),
+    string('ctaLabel', 'CTA label'),
+    string('ctaHref', 'CTA href'),
+    image('image', 'Image'),
+    string('imageAlt', 'Image alt'),
   ],
 })
 export const aboutPageTestimonials = defineType({
@@ -255,7 +245,6 @@ export const pageSeo = defineType({
 export const pageObjects = [
   office,
   aboutStat,
-  aboutValue,
   aboutReview,
   socialLink,
   serviceOption,
