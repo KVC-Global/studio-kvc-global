@@ -28,7 +28,7 @@ export const aboutPage = defineType({
     }),
     defineField({
       name: 'valuesSection',
-      title: 'Core values',
+      title: 'Company story (core values section)',
       type: 'aboutPageValues',
       group: 'company',
     }),
