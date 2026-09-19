@@ -4,6 +4,7 @@ import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
 import {structure} from './structure'
 import {documentInternationalization} from '@sanity/document-internationalization'
+import {customColorPicker} from 'sanity-plugin-color-input'
 import {
   companyInfoInitialValue,
   siteSettingsInitialValue,
@@ -21,6 +22,9 @@ export default defineConfig({
 
   plugins: [
     structureTool({structure}),
+    customColorPicker({
+      colors: ['#F8BC62', '#2563EB', '#F3D8D6', '#0F1B2D'],
+    }),
     visionTool(),
     documentInternationalization({
       supportedLanguages: [

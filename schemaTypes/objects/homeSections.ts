@@ -12,6 +12,53 @@ const stat = defineType({
   type: 'object',
   fields: [string('value', 'Value'), string('label', 'Label'), string('icon', 'Icon name')],
 })
+const progressStat = defineType({
+  name: 'homepageProgressStat',
+  title: 'Progress stat',
+  type: 'object',
+  fields: [
+    string('value', 'Value (e.g. 98%)'),
+    string('label', 'Label'),
+    defineField({
+      name: 'color',
+      title: 'Color',
+      type: 'color',
+      options: {disablePresets: false, disableCopyValues: true, enableAlpha: false},
+    }),
+  ],
+})
+const iconStat = defineType({
+  name: 'homepageIconStat',
+  title: 'Icon stat',
+  type: 'object',
+  fields: [
+    string('value', 'Value'),
+    string('sub', 'Sub label'),
+    defineField({
+      name: 'icon',
+      title: 'Icon',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Handshake', value: 'handshake'},
+          {title: 'Award', value: 'award'},
+        ],
+      },
+    }),
+    defineField({
+      name: 'tone',
+      title: 'Tone',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Blue', value: 'blue'},
+          {title: 'Gold', value: 'gold'},
+        ],
+      },
+      initialValue: 'blue',
+    }),
+  ],
+})
 const reason = defineType({
   name: 'homepageReason',
   title: 'Why KVC reason',
@@ -91,6 +138,23 @@ export const homepageAbout = defineType({
     string('imageAlt', 'Image alt'),
     string('ctaLabel', 'CTA label'),
     string('ctaHref', 'CTA href'),
+    defineField({
+      name: 'progressStats',
+      title: 'Progress stats',
+      description: 'Circular progress rings shown next to the description.',
+      type: 'array',
+      of: [defineArrayMember({type: 'homepageProgressStat'})],
+      validation: (Rule) => Rule.max(4),
+    }),
+    string('statsTitle', 'Stats title'),
+    defineField({
+      name: 'iconStats',
+      title: 'Icon stats',
+      description: 'Stats with icon, value and sub label listed under the stats title.',
+      type: 'array',
+      of: [defineArrayMember({type: 'homepageIconStat'})],
+      validation: (Rule) => Rule.max(6),
+    }),
   ],
 })
 
@@ -206,6 +270,8 @@ export const homepageSeo = defineType({
 
 export const homepageObjects = [
   stat,
+  progressStat,
+  iconStat,
   reason,
   processStep,
   review,
