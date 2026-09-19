@@ -2,6 +2,7 @@
   "name": "kvc-global",
   "private": true,
   "version": "1.0.0",
+  "packageManager": "pnpm@12.3.4",
   "main": "package.json",
   "license": "UNLICENSED",
   "scripts": {
