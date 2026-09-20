@@ -13,7 +13,7 @@ const destinations = [
   {title: 'OTHM', value: 'othm'},
   {title: 'Qualifi', value: 'qualifi'},
   {title: 'University of Wolverhampton', value: 'wolverhampton'},
-  {title: 'Enterprise Services', value: 'enterprise'},
+  {title: 'Blog', value: 'blog'},
   {title: 'Contact', value: 'contact'},
   {title: 'Study in Malaysia', value: 'malaysiaStudy'},
   {title: 'Study in Taiwan', value: 'taiwanStudy'},

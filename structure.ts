@@ -9,6 +9,7 @@ import {malaysiaStudyStructure} from './structures/malaysiaStudyStructure'
 import {taiwanStudyStructure} from './structures/taiwanStudyStructure'
 import {aboutStructure, contactStructure} from './structures/pageStructure'
 import {dichVuStructure} from './structures/servicePageStructure'
+import {blogStructure} from './structures/blogStructure'
 import {onlineProgramsStructure} from './structures/onlineProgramStructure'
 
 const sharedDocumentTypes = new Set([
@@ -37,6 +38,7 @@ const allStructuredDocumentTypes = new Set([
   'publicStudyPage',
   'malaysiaStudyPage',
   'taiwanStudyPage',
+  'post',
   'lead',
   ...sharedDocumentTypes,
 ])
@@ -125,6 +127,7 @@ export const structure: StructureResolver = (S) =>
               S.documentTypeListItem('faq').title('FAQs'),
             ]),
         ),
+      blogStructure(S),
       S.listItem()
         .id('leads')
         .title('Leads')

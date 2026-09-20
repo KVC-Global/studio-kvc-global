@@ -9,6 +9,7 @@ import {onlineOthmPage} from './documents/onlineOthmPage'
 import {onlineQualifiPage} from './documents/onlineQualifiPage'
 import {onlineWolverhamptonPage} from './documents/onlineWolverhamptonPage'
 import {partner} from './documents/partner'
+import {post} from './documents/post'
 import {service} from './documents/service'
 import {relatedService} from './documents/relatedService'
 import {testimonial} from './documents/testimonial'
@@ -64,6 +65,7 @@ export const schemaTypes = [
   ...companyInfoObjects,
   testimonial,
   partner,
+  post,
   service,
   relatedService,
   lead,
