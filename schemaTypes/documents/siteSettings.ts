@@ -9,6 +9,7 @@ const destinations = [
   {title: 'Private Schools', value: 'privateStudy'},
   {title: 'Public Schools', value: 'publicStudy'},
   {title: 'Online Courses', value: 'onlineCourses'},
+  {title: 'Services Page', value: 'dichVu'},
   {title: 'OSSD Ontario', value: 'ossd'},
   {title: 'OTHM', value: 'othm'},
   {title: 'Qualifi', value: 'qualifi'},
