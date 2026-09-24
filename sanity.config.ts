@@ -53,6 +53,7 @@ export default defineConfig({
         'partner',
         'testimonial',
         'faq',
+        'post',
       ],
     }),
   ],
@@ -72,8 +73,8 @@ export default defineConfig({
             'onlineOthmPage',
             'onlineQualifiPage',
             'onlineWolverhamptonPage',
-            'workPassPage',
             'studyAbroadPage',
+            'post',
             'uniMasterPage',
             'privateStudyPage',
             'publicStudyPage',
@@ -98,8 +99,8 @@ export default defineConfig({
         ['private-study-page', 'privateStudyPage', 'Trang Du học Tư thục', 'Private Study Page'],
         ['public-study-page', 'publicStudyPage', 'Trang Du học Công lập', 'Public Study Page'],
         ['malaysia-study-page', 'malaysiaStudyPage', 'Trang Du học Malaysia', 'Malaysia Study Page'],
-        ['taiwan-study-page', 'taiwanStudyPage', 'Trang Du học Đài Loan', 'Taiwan Study Page'],
         ['site-settings', 'siteSettings', 'Cài đặt website', 'Site Settings'],
+        ['post', 'post', 'Bài viết', 'Blog post'],
       ].flatMap(([id, schemaType, viTitle, enTitle]) => [
         {
           id: `${id}-vi`,
