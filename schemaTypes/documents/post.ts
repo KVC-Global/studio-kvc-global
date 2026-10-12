@@ -65,6 +65,30 @@ export const post = defineType({
       group: 'content',
     }),
     defineField({
+      name: 'authorImage',
+      title: 'Author image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      group: 'content',
+    }),
+    defineField({
+      name: 'authorRole',
+      title: 'Author role',
+      type: 'string',
+      description: 'Job title displayed under the author name (e.g. "Chuyên viên tư vấn")',
+      group: 'content',
+    }),
+    defineField({
+      name: 'keyTakeaways',
+      title: 'Key takeaways',
+      type: 'array',
+      description: 'Short highlights shown at the top of the article body',
+      of: [defineArrayMember({type: 'string'})],
+      group: 'content',
+    }),
+    defineField({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
@@ -77,8 +101,7 @@ export const post = defineType({
       title: 'Body',
       type: 'array',
       group: 'content',
-      description:
-        'Markdown shortcuts work while typing: # heading, **bold**, - list, > quote',
+      description: 'Markdown shortcuts work while typing: # heading, **bold**, - list, > quote',
       of: [
         defineArrayMember({type: 'block'}),
         defineArrayMember({
