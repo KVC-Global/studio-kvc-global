@@ -7352,7 +7352,21 @@
           },
           "optional": true
         },
+        "servicePlaceholder": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        },
         "messageLabel": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        "messagePlaceholder": {
           "type": "objectAttribute",
           "value": {
             "type": "string"
@@ -7366,7 +7380,35 @@
           },
           "optional": true
         },
+        "privacyLabel": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        "consentSuffix": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        },
         "submitLabel": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        "pendingLabel": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        "responseNote": {
           "type": "objectAttribute",
           "value": {
             "type": "string"
@@ -7794,6 +7836,13 @@
           "optional": true
         },
         "title": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        "titleLine2": {
           "type": "objectAttribute",
           "value": {
             "type": "string"
