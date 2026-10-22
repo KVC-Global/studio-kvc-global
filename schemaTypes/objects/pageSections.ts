@@ -166,6 +166,7 @@ export const aboutPageTestimonials = defineType({
   fields: [
     string('eyebrow', 'Eyebrow'),
     string('title', 'Title'),
+    string('titleLine2', 'Title line 2 (gold accent)'),
     text('description', 'Description'),
     defineField({
       name: 'reviews',
@@ -218,9 +219,15 @@ export const contactPageForm = defineType({
     string('emailLabel', 'Email label'),
     string('phoneLabel', 'Phone label'),
     string('serviceLabel', 'Service label'),
+    string('servicePlaceholder', 'Service placeholder'),
     string('messageLabel', 'Message label'),
-    text('consentLabel', 'Consent label'),
+    string('messagePlaceholder', 'Message placeholder'),
+    text('consentLabel', 'Consent text before privacy link'),
+    string('privacyLabel', 'Privacy policy link label'),
+    text('consentSuffix', 'Consent text after privacy link'),
     string('submitLabel', 'Submit label'),
+    string('pendingLabel', 'Submit label while sending'),
+    text('responseNote', 'Response time note below submit button'),
     defineField({
       name: 'serviceOptions',
       title: 'Service options',
