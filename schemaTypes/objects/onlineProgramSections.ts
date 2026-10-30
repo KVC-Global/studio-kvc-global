@@ -155,6 +155,7 @@ export const onlineProgramAudienceOssd = defineType({
   type: 'object',
   fields: [
     string('title', 'Title'),
+    text('subtitle', 'Subheading (Mô tả dưới tiêu đề)'),
     defineField({name: 'items', title: 'Audience', type: 'array', of: [defineArrayMember({type: 'onlineProgramAudienceCardTitleOnly'})]}),
   ],
 })
@@ -281,6 +282,7 @@ export const onlineProgramSubjects = defineType({
   type: 'object',
   fields: [
     string('title', 'Title'),
+    text('subtitle', 'Subheading (Mô tả dưới tiêu đề)'),
     defineField({name: 'items', title: 'Subjects', type: 'array', of: [defineArrayMember({type: 'onlineProgramSubject'})]}),
   ],
 })
@@ -292,6 +294,7 @@ export const onlineProgramParentReasons = defineType({
   type: 'object',
   fields: [
     string('title', 'Title'),
+    text('subtitle', 'Subheading (Mô tả dưới tiêu đề)'),
     defineField({name: 'items', title: 'Reasons', type: 'array', of: [defineArrayMember({type: 'string'})]}),
   ],
 })

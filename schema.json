@@ -9165,6 +9165,13 @@
           },
           "optional": true
         },
+        "subtitle": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        },
         "items": {
           "type": "objectAttribute",
           "value": {
@@ -9508,6 +9515,13 @@
           },
           "optional": true
         },
+        "subtitle": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        },
         "items": {
           "type": "objectAttribute",
           "value": {
@@ -9535,6 +9549,13 @@
           }
         },
         "title": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        "subtitle": {
           "type": "objectAttribute",
           "value": {
             "type": "string"
