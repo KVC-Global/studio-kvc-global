@@ -257,6 +257,8 @@ export const onlineProgramPrograms = defineType({
   type: 'object',
   fields: [
     string('title', 'Title'),
+    string('subjectsLabel', 'Subjects heading (Tiêu đề môn học)'),
+    string('entryRequirementsLabel', 'Entry requirements heading (Tiêu đề điều kiện đầu vào)'),
     defineField({name: 'items', title: 'Programs', type: 'array', of: [defineArrayMember({type: 'onlineProgramCard'})]}),
   ],
 })
