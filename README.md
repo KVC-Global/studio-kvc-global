@@ -8,6 +8,18 @@ Now you can do the following things:
 - [Join the Sanity community](https://www.sanity.io/community/join?utm_source=readme)
 - [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
 
+## Blog Markdown tables
+
+In a blog post, open **Content → Body**, add a **Markdown table** block where the table should appear, and paste the table into **Table Markdown** without code fences. Include a header and a separator row:
+
+```markdown
+| Chương trình | Thời gian |
+| --- | ---: |
+| Cao đẳng | 12 tháng |
+```
+
+Keep surrounding paragraphs and images in their existing Body blocks.
+
 ## Online program content
 
 In each OTHM, QUALIFI or Wolverhampton language document, open the content tab and the programs section. `Subjects heading (Tiêu đề môn học)` and `Entry requirements heading (Tiêu đề điều kiện đầu vào)` set the two headings for every program in that section. Leave either blank to use the website's language-specific default. Edit the actual subject list and admission requirements inside each item in `Programs`; these existing fields are separate from the headings. The generic online program schema shares these fields.

@@ -101,13 +101,29 @@ export const post = defineType({
       title: 'Body',
       type: 'array',
       group: 'content',
-      description: 'Markdown shortcuts work while typing: # heading, **bold**, - list, > quote',
+      description:
+        'Markdown shortcuts work while typing: # heading, **bold**, - list, > quote. For a table, insert a Markdown table block.',
       of: [
         defineArrayMember({type: 'block'}),
         defineArrayMember({
           type: 'image',
           options: {hotspot: true},
           fields: [defineField({name: 'alt', title: 'Alt text', type: 'string'})],
+        }),
+        defineArrayMember({
+          name: 'markdownTable',
+          title: 'Markdown table',
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'markdown',
+              title: 'Table Markdown',
+              type: 'text',
+              rows: 6,
+              description: 'Paste the table with its header and separator row, without code fences.',
+              validation: (Rule) => Rule.required(),
+            }),
+          ],
         }),
       ],
     }),
